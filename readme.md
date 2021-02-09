@@ -1,4 +1,1 @@
-# PragmatechFoundationProject
-#Salam
-
-##Islemelidir
+# PragmatechFoundationProjectijk
