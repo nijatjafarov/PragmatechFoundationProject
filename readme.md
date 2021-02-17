@@ -1,5 +1,1 @@
 # PragmatechFoundationProject
-
-## Hello There
-
-##Goodbye
