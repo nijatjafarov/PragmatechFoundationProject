@@ -1,0 +1,48 @@
+body {
+  margin: 0px;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 13px;
+  line-height: 23px;
+}
+
+.header {
+  height: 103px;
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.logo {
+  width: 204px;
+  border-right: 1px solid #ebebeb;
+  text-align: center;
+}
+
+.logo img {
+  height: 22px;
+  margin: 41px auto;
+}
+
+.navbar-and-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.right-button {
+  width: 117px;
+  border-left: 1px solid #ebebeb;
+  text-align: center;
+}
+
+.corner-button {
+  margin: 41px auto;
+}
+
+li {
+  list-style-type: none;
+  float: left;
+  padding: 23px;
+}
