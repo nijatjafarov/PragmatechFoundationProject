@@ -5,14 +5,13 @@ body {
 }
 
 .header {
-  font-family: 'Bebas Neue';
   height: 104px;
   border-bottom: 1px solid #ebebeb;
   display: flex;
   justify-content: space-between;
 }
 
-.logo, .icon{
+.logo a, .icon{
   width: 205px;
   height: 100%;
   display: flex;
@@ -31,8 +30,7 @@ body {
 }
 
 .navbar {
-  display: inline-block;
-  width: 560px;
+  width: 585px;
 }
 
 .navbar ul {
@@ -44,7 +42,10 @@ body {
 }
 
 .navbar ul li {
-  font-size: 18px;
+  font-family: 'Bebas Neue';
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .icon {
@@ -56,7 +57,40 @@ body {
 
 .icon svg{
   margin: 0px auto;
+  cursor: pointer;
 }
+
+/* Common classes */
+.bebas-main {
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  letter-spacing: 1.5px;
+}
+
+.bebas-2 {
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  letter-spacing: 1.3px;
+}
+
+.mulish-1 {
+  font-family: 'Mulish';
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.mulish-2 {
+  font-family: 'Mulish';
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.section-headers {
+  font-family: 'Mulish';
+  font-size: 38px;
+  font-weight: 300;
+}
+/* End of common classes */
 
 .first-screen {
   height: 643px;
@@ -75,6 +109,15 @@ body {
   border-style: none;
   background-color: white;
   padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+
+}
+
+.corner-buttons button:hover {
+  background-color: #050505;
+  color: white;
 }
 
 .sm-sidebar {
@@ -83,7 +126,12 @@ body {
   bottom: 50%;
   left: 0px;
   margin-left: 40px;
-  transform: translate(0px,50%)
+  transform: translate(0px,50%);
+  z-index: 5;
+}
+
+.sm-sidebar a:visited {
+  color: #050505;
 }
 
 .sm-sidebar i {
@@ -93,7 +141,7 @@ body {
 .gridy-part {
   background-position: center;
   height: 100%;
-  background-color: #ffe9e9;
+  background-color: #fad9e2;
   background-image: linear-gradient(90deg, #e6aeae .1em, transparent .1em);
   background-size: 13em 3em;
   border-top: 1px solid #e6aeae;
@@ -102,8 +150,7 @@ body {
 .about {
   width: 1000px;
   text-align: center;
-  padding: 250px 0px;
-  margin: 0px auto;
+  margin: 250px auto;
 }
 
 .about h6 {
@@ -122,62 +169,61 @@ body {
   letter-spacing: 0px;
 }
 
+.about span a {
+  text-decoration: line-through;
+}
+
 .services-item {
   width: 208px;
-  height: 400px;
-  padding: 12px;
   position: relative;
 }
 
 .services-item h3 {
-  font-family: 'Bebas Neue';
-  padding: 16px 12px;
   margin: 0px;
-  font-size: 1.5em;
-  position: absolute;
-  bottom: 140px;
-  left: 0px;
+  margin-top: 16px;
 }
 
 .services-item p {
-  position: absolute;
-  bottom: 55px;
-  left: 10px;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   line-height: 24px;
-  padding: 5px 0px;
+  margin-top: 5px;
 }
 
 /* Tabs */
+.cap-and-tabs {
+  margin: 250px auto;
+}
+
+
 .tables {
-  margin: 300px auto;
+  position: relative;
 }
 
 .table-row {
-  width: 1064px;
-  height: 232px;
-  margin: 200px auto;
+  width: 1040px;
+  margin: 0px auto;
+  margin-bottom: 100px;
   display: flex;
   justify-content: space-between;
 }
 
+.work-row {
+  width: 1064px;
+}
+
 .works-item {
-  width: 208px;
-  height: 208px;
-  padding: 12px;
+  width: fit-content;
   position: relative;
-  border: 1px solid black;
 }
 
 .table-abstract {
   transform: rotate(-90deg);
   position: absolute;
-  top: 40px;
-  left: -50px;
-  font-weight: 300;
+  top: 75px;
+  left: -55px;
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
 }
 
@@ -185,19 +231,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  position: absolute;
+
 
 }
 
 .square {
   width: 208px;
   height: 208px;
-  position: absolute;
+}
+
+.work-square {
+  padding: 12px;
+  border: 1px solid black;
 }
 
 .services-item button {
-  position: absolute;
-  bottom: 0px;
+  cursor: pointer;
   border-style: none;
   background-color: white;
   padding: 20px 25px;
@@ -208,57 +257,71 @@ body {
 }
 
 .works-item h4 {
-  font-family: 'Bebas Neue';
-  padding: 16px 12px;
   margin: 0px;
-  font-size: 1.3em;
-  position: absolute;
-  bottom: -60px;
-  left: 0px;
+  margin-top: 16px;
 }
 
 .works-item h3 {
+  text-align: right;
+  margin: 0px 12px 2px 12px;
+
+}
+
+.captions {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 50px;
+  margin-left: 105px;
+}
+
+.captions i {
+  font-size: 110px;
+  margin-right: 30px;
+
+}
+
+.captions span {
   font-family: 'Bebas Neue';
-  padding: 16px 12px;
-  margin: 0px;
-  font-size: 1.5em;
-  position: absolute;
-  top: -60px;
-  right: 0px;
+  font-size: 220px;
+  letter-spacing: -5px;
+  margin-right: 20px;
 }
 
 .team-item {
   width: 208px;
-  height: 208px;
-  padding: 12px;
   position: relative;
 }
 
 .team-item h3 {
-  font-family: 'Bebas Neue';
-  padding: 16px 10px;
   margin: 0px;
-  font-size: 1.5em;
-  position: absolute;
-  bottom: -50px;
-  left: 0px;
+  margin-top: 16px;
 }
 
 .team-item p {
-  position: absolute;
-  bottom: -80px;
-  left: 10px;
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   line-height: 24px;
-  padding: 5px 0px;
+  margin: 0px;
+  margin-top: 5px;
 }
 
 .team-sidebar {
   width: 20px;
   position: absolute;
-  top: 10px;
-  left: -22px;
+  top: -2px;
+  left: -34px;
+}
+
+.team-sidebar a {
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.team-sidebar a:visited {
+  color: #050505;
+}
+
+.team-sidebar a:hover {
+  color: red;
 }
 
 .team-sidebar i {
@@ -266,8 +329,13 @@ body {
   padding: 10px;
 }
 
+#section-5 {
+  margin: 0px;
+  padding-bottom: 210px;
+}
+
 .careers {
-  padding-left: 200px;
+  margin-left: 200px;
 }
 
 .name-button {
@@ -280,11 +348,6 @@ body {
   margin-bottom: 20px;
 }
 
-.profession-name {
-  font-family: 'Bebas Neue';
-  letter-spacing: 1.3px;
-}
-
 .career-button {
   font-family: 'Mulish';
   border-style: none;
@@ -294,15 +357,21 @@ body {
   padding: 0px;
 }
 
+.professions {
+  margin-top: 20px;
+}
+
 .professions ul {
   padding-inline-start: 30px;
+  margin: 0px;
 }
 
 .professions li {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   line-height: 24px;
-  margin: 15px 0px;
+  margin:0px;
+  margin-top: 15px;
 }
 
 .info {
@@ -324,20 +393,31 @@ body {
 }
 
 .h-t h6 {
-  font-size: 15px;
-  font-weight: 300;
-  margin: 0px 0px 100px 0px;
+  margin: 0px;
 }
 
 .back-to-top {
   transform: rotate(-90deg);
   position: fixed;
-  bottom: 100px;
-  right: -15px;
-  font-weight: 300;
+  bottom: 110px;
+  right: -25px;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 11px;
   letter-spacing: 2px;
+  z-index: 5;
+}
+
+.back-to-top a {
+  text-decoration: none;
+}
+
+.back-to-top a:visited {
+  color: #050505;
+}
+
+.back-to-top a:link {
+  color: #050505;
 }
 
 /* Footer part */
@@ -388,7 +468,6 @@ body {
 }
 
 .section-items ul li {
-  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   line-height: 24px;
   list-style: none;
@@ -424,9 +503,7 @@ body {
 
 .section-and-icon h4 {
   margin: 0px;
-  font-family: 'Bebas Neue';
   padding: 16px 13px;
-  font-size: 1.5em;
   border-right: 1.5px solid black;
   text-align: right;
 }
