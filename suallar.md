@@ -15,3 +15,19 @@
         **Character**: hərf, rəqəm, simvolların ASCİİ və ya Unicode-da olan encoding qarşılığından istifadə etmək məqsədilə işlədilir.
         **String**: mətn formasında olan datalardan istifadə üçün mövcuddur.
         **Boolean**: mümkün iki qiymətdən birini alan data tipi. Doğru və ya yalnış kimi məntiqi nəticələr əldə etmək üçün istifadə olunur.
+4. Type Conversion ya da Type Casting nədir? Hansı hallarda ehtiyac duyulur
+    - Type Conversion və ya Type Casting bir data tipinin digər data tipinə çevrilməsidir. Uyğun olaraq bir data tipinin digər data tipinə çevrilməsi lazım gəldiyi zaman istifadə edilir. Kiçik bir nümunə: Marketdən bir neçə məhsul alınır və onların hər birinin qiyməti rasional ədəd olaraq manat və qəpik olaraq birlikdə göstərilir(Məs: 3.45 manat), amma bizə bütün məhsulların ümumi qiymətini topladığımız zaman tutarı sadəcə tam ədədlə (Məs: 23 manat) ifadə etmək lazım gələ bilər. Bu zaman float tiplərin cəmini integer tipinə convert etmək lazım gəlir.
+5. Operator precedence nədir və əhəmiyyətini izah edin
+    - Operator precedence operatorların yerinə yetirilmə öncüllüyünü bildirir. Bütün operatorlar bərabər səviyəli olmurlar və onlar arasında iyerarxiya mövcud olur. Məsələn, qüvvətə yüksəltmə operatoru vurma operatorundan və o da toplama operatorundan daha güclüdür, bu baxımdan sözügedən 3 operatorun birlikdə işləndiyi statement olduğu zaman ilk öncə qüvvətə yüksəltmə, daha sonra vurma və daha sonra toplama operatorları yerinə yetiriləcək.
+6. Automatic Type Conversion ve Type Conversion Methodlar arasındakı fərqləri izah edin.
+    - Automatic Type Conversion(Implicit) tip çevirmənin compiler tərəfindən yerinə yetirildiyi çevirmədir, digər tip çevirmə olan Explicit Type Conversion isə çevirmənin developer tərəfindən edildiyi çevrilmədir. Məsələn:
+    ```c
+    double da = 3.3;
+    double db = 3.3;
+    double dc = 3.4;
+    int result = (int)da + (int)db + (int)dc; // result == 9
+    // Yuxarıda alınan nəticə Explicit çevirmədir, əgər Implicit olsaydı nəticə 10 olardı.
+    //int result = da + db + dc;
+    ```
+
+    Nümunədən göründüyü kimi Implicit çevirmədə bir dəyər digərinə olduğu kimi mənimsədilir. Explicit çevirmədə isə mənimsədilən dəyərin qarşısına çevrilmək istədiyi data tipi bildirilir. Implicit çevrilmənin dezavantajı çevirməni compiler apardığı üçün bəzən gözlənilən nəticənin alınmaması ola bilər, digərində isə developer birbaşa özü müdaxilə edir. Bundan başqa bəzi data tipləri vardır ki, bunlar çevrilməyə uyğun deyillər (Məs: boolean və char) və ya  bu zaman Explicit çevrilmə zamanı xəta baş verir. Bundan başqa böyük data tipi kiçik data tipə çevirən zaman (Məs: float -> integer) datada itki baş verə bilər (Məs: 7.23 -> 7).
