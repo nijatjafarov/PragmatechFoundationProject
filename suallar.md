@@ -20,14 +20,21 @@
 5. Operator precedence nədir və əhəmiyyətini izah edin
     - Operator precedence operatorların yerinə yetirilmə öncüllüyünü bildirir. Bütün operatorlar bərabər səviyəli olmurlar və onlar arasında iyerarxiya mövcud olur. Məsələn, qüvvətə yüksəltmə operatoru vurma operatorundan və o da toplama operatorundan daha güclüdür, bu baxımdan sözügedən 3 operatorun birlikdə işləndiyi statement olduğu zaman ilk öncə qüvvətə yüksəltmə, daha sonra vurma və daha sonra toplama operatorları yerinə yetiriləcək.
 6. Automatic Type Conversion ve Type Conversion Methodlar arasındakı fərqləri izah edin.
-    - Automatic Type Conversion(Implicit) tip çevirmənin compiler tərəfindən yerinə yetirildiyi çevirmədir, digər tip çevirmə olan Explicit Type Conversion isə çevirmənin developer tərəfindən edildiyi çevrilmədir. Məsələn:
+    -Bu barədə araşdırdığım zaman ətraflı məlumat əldə edə bilmədim. Çıxardığım nəticə bu oldu ki, məncə Automatic Type Conversion-la proqramlaşdırma dillərinin sahib olduğu built-in method olaraq Type Conversion Methodlar eyni və ya bənzərdir. Hər ikisi zəif data tipini güclü data tipinə çevirirlər yanlış anlamamışamsa, amma fərq olmasa dilə əlavə olaraq belə built-in methodlar niyə qoyulsunki? Təəssüf ki, bu fərqləri göstərəcək bir mənbə tapmağım mümkün olmadı.
+7. Implicit ve Explicit type conversiton nədir?
+    - Implicit çevirmə zəif data tipini güclü data tipinə çevirir:
+    `char` -> `int` -> `long` -> `float` -> `double`
+    Implicit Type Conversion(Automatic) tip çevirmənin compiler tərəfindən yerinə yetirildiyi çevirmədir, digər tip çevirmə olan Explicit Type Conversion(Manual) isə çevirmənin developer tərəfindən edildiyi çevrilmədir. Burada isə əksinə olaraq güclü data tip zəif data tipə çevrilir:
+    `double` -> `float` -> `long` -> `int` -> `char`
+    Məsələn:
+
     ```c
     double da = 3.3;
     double db = 3.3;
     double dc = 3.4;
-    int result = (int)da + (int)db + (int)dc; // result == 9
-    // Yuxarıda alınan nəticə Explicit çevirmədir, əgər Implicit olsaydı nəticə 10 olardı.
-    //int result = da + db + dc;
+    int explicit_result = (int)da + (int)db + (int)dc; // result == 9
+    int implicit_result = da + db + dc; // result == 10
+    // Explicit çevirmə ilə nəticə 9 alındığı halda, Implicit çevirmə ilə nəticə 10 olur.
     ```
 
     Nümunədən göründüyü kimi Implicit çevirmədə bir dəyər digərinə olduğu kimi mənimsədilir. Explicit çevirmədə isə mənimsədilən dəyərin qarşısına çevrilmək istədiyi data tipi bildirilir. Implicit çevrilmənin dezavantajı çevirməni compiler apardığı üçün bəzən gözlənilən nəticənin alınmaması ola bilər, digərində isə developer birbaşa özü müdaxilə edir. Bundan başqa bəzi data tipləri vardır ki, bunlar çevrilməyə uyğun deyillər (Məs: boolean və char) və ya  bu zaman Explicit çevrilmə zamanı xəta baş verir. Bundan başqa böyük data tipi kiçik data tipə çevirən zaman (Məs: float -> integer) datada itki baş verə bilər (Məs: 7.23 -> 7).
