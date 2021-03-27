@@ -1,0 +1,278 @@
+.project-page-inside {
+  position: relative;
+}
+
+.left-line {
+  width: 1px;
+  height: 100%;
+  background-color: #ebebeb;
+  position: absolute;
+  left: 118px;
+}
+
+.right-line {
+  width: 1px;
+  height: 100%;
+  background-color: #ebebeb;
+  position: absolute;
+  right: 118px;
+}
+
+.next-previous  {
+  font-family: "Mulish";
+  bottom: 50%;
+  transform: translate(0px,50%);
+  transform: rotate(-90deg);
+  position: fixed;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 2px;
+  z-index: 5;
+}
+
+.previous-project {
+  left: -12px;
+}
+
+.next-project {
+  right: 6px;
+}
+
+.main-project {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.main-project-inside {
+  width: fit-content;
+  margin: 0px auto;
+}
+
+.related-projects-inside {
+  width: 1100px;
+  margin: 0px auto;
+}
+
+.related-projects-inside {
+  margin-top: 10%;
+}
+
+.loc-bar h6 {
+  font-size: 15px;
+  font-weight: 200;
+  margin: 0px;
+}
+
+.loc-bar h6 span, .tags-info h6 span{
+  color: #b1b1b1;
+}
+
+.loc-bar {
+  padding: 20px 0px;
+}
+
+.imgs {
+  margin: 5% 0px;
+}
+
+.img {
+  width: 1100px;
+  height: 635px;
+  margin: 30px auto;
+  overflow: hidden;
+}
+
+.img img {
+  width: 100%;
+  object-fit: cover;
+  transition: all 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.img:hover img {
+  transform: scale(1.03);
+}
+
+.project-info {
+  display: flex;
+  align-items: flex-end;
+  margin: 0px;
+  margin-bottom: 10%;
+}
+
+.text-info {
+  margin-right: 40px;
+}
+
+.text-info h3 {
+  font-family: "Bebas Neue";
+  font-size: 50px;
+  margin: 0px;
+}
+
+.text-info p {
+  color: #b1b1b1;
+  max-width: 720px;
+}
+
+.tags-info h6 {
+  font-size: 15px;
+  font-weight: 300;
+  margin: 15px 0px;
+}
+
+.sm-icons a {
+  color: gray;
+  margin-right: 25px;
+  transition: all 0.2s;
+  transition-timing-function: ease-in-out;
+}
+
+.sm-icons a:hover {
+  color: black;
+}
+
+.related-projects-inside h5 {
+  font-family: "Bebas Neue";
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  margin: 25px 0px;
+}
+
+.related-projects-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.related-projects-item {
+  width: 250px;
+  height: 250px;
+  margin: 0px;
+}
+
+.portfolio-icon {
+  padding: 90px 0px;
+  display: flex;
+  justify-content: center;
+  border: none;
+}
+
+
+@media screen and (max-width: 1360px) {
+  .img {
+    width: 950px;
+    height: 548px;
+  }
+
+  .related-projects-inside, .project-info {
+    width: 950px;
+  }
+
+  .related-projects-item {
+    width: 215px;
+    height: 215px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .img {
+    width: 768px;
+    height: 443px;
+  }
+
+  .related-projects-inside, .project-info {
+    width: 768px;
+  }
+
+  .related-projects-item {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .right-line, .left-line {
+    display: none;
+  }
+
+  .project-info {
+    display: block;
+  }
+
+  .text-info {
+    margin-bottom: 5%;
+  }
+
+  .related-projects-item {
+    width: 370px;
+    height: 370px;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-icon {
+    padding: 60px 0px 90px 0px;
+}
+
+@media screen and (max-width: 800px) {
+  .img {
+    width: 600px;
+    height: 346px;
+  }
+
+  .related-projects-inside, .project-info {
+    width: 600px;
+  }
+
+  .related-projects-item {
+    width: 285px;
+    height: 285px;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .related-projects-item {
+    width: 600px;
+    height: 600px;
+  }
+
+  .text-info h3{
+    font-size: 35px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .img {
+    width: 300px;
+    height: 173px;
+  }
+
+  .related-projects-inside, .project-info {
+    width: 300px;
+  }
+
+  .related-projects-item {
+    width: 300px;
+    height: 300px;
+  }
+
+  .next-previous, .back-to-top {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .img {
+    width: 272px;
+    height: 157px;
+  }
+
+  .related-projects-inside, .project-info {
+    width: 272px;
+  }
+
+  .related-projects-item {
+    width: 272px;
+    height: 272px;
+  }
+}

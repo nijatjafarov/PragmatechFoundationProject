@@ -1,0 +1,169 @@
+#port-loc-bar {
+  margin: 0px 50px;
+}
+
+.port-inside {
+  width: 1296px;
+  margin: 0px auto;
+  margin-top: 6%;
+}
+
+.categories {
+  margin-bottom: 25px;
+}
+
+.categories ul {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  list-style: none;
+}
+
+.categories ul li, .text h1 {
+  margin-right: 30px;
+  font-family: "Mulish";
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.categories ul li:first-child {
+  text-decoration: underline;
+}
+
+.port-items {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.port-item {
+  position: relative;
+  width: 630px;
+  height: 630px;
+  margin: 16px 0px;
+}
+
+.port-item img {
+  object-fit: cover;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.4s ease;
+  background-color: white;
+}
+
+.port-item:hover{
+  box-shadow: 0px 4px 80px 10px white, 0 10px 25px 0px #c28ffb;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+.text h1 {
+  text-align: left;
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.text h2 {
+  font-family: "Bebas Neue";
+  font-size: 25px;
+  margin: 0px;
+  text-align: left;
+}
+
+.port-button {
+  text-align: center;
+  margin: 6% auto 11% auto;
+}
+
+@media screen and (max-width: 1400px) {
+  .port-item {
+    width: 460px;
+    height: 460px;
+  }
+
+  .port-inside {
+    width: 956px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .port-item {
+    width: 370px;
+    height: 370px;
+  }
+
+  .port-inside {
+    width: 776px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .port-item {
+    width: 270px;
+    height: 270px;
+  }
+
+  .port-inside {
+    width: 576px;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .port-item {
+    width: 420px;
+    height: 420px;
+  }
+
+  .port-inside {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .categories ul {
+    flex-wrap: wrap;
+  }
+  .categories ul li {
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+
+  .categories ul li:last-child {
+    margin: 0px;
+  }
+
+  .port-item {
+    width: 270px;
+    height: 270px;
+  }
+
+  .port-inside {
+    width: 270px;
+  }
+}

@@ -125,6 +125,9 @@ body {
   width: 100%;
   height: 643px;
   position: relative;
+  background-image: url(../img/first.jpg);
+  width: 100%;
+  background-size: cover;
 }
 
 .corner-buttons {
@@ -286,10 +289,10 @@ body {
   border: 1px solid black;
 }
 
-.table-item button {
+.main-button {
   cursor: pointer;
   border-style: none;
-  background-color: white;
+  background-color: #fff4f4;
   padding: 20px 25px;
   font-weight: 300;
   text-transform: uppercase;
@@ -409,6 +412,7 @@ body {
   width: 30px;
   height: 30px;
   padding: 0px;
+  border: 1px solid black;
 }
 
 .professions {
@@ -488,9 +492,9 @@ body {
 
 /* Footer part */
 .footer {
+  background-color: #050505;
   padding: 70px 0px;
-  border-top: 1px solid #e6aeae;
-  border-bottom: 1px solid #e6aeae;
+  border-bottom: 1px solid #2d2d2d;
   display: flex;
   align-items: center;
 }
@@ -507,12 +511,12 @@ body {
 
 .contact2-section {
   width: 54%;
-  border-left: 1px solid #e6aeae;
+  border-left: 1px solid #2d2d2d;
 }
 
 .contact1-section, .visit-section {
   width: 46%;
-  border-left: 1px solid #e6aeae;
+  border-left: 1px solid #2d2d2d;
 }
 
 .logo-section, .contact1-section,  .contact2-section, .visit-section {
@@ -534,6 +538,7 @@ body {
 
 .section-items ul li {
   -webkit-font-smoothing: antialiased;
+  color: white;
   line-height: 24px;
   list-style: none;
   padding: 5px 0px;
@@ -541,6 +546,7 @@ body {
 
 .logo-section, .logo-and-motto span {
   text-align: center;
+  color: white;
 }
 
 .logo-and-motto {
@@ -559,6 +565,7 @@ body {
 }
 
 .section-and-icon i {
+  color: white;
   font-size: 20px;
   position: absolute;
   top: 10px;
@@ -567,10 +574,23 @@ body {
 }
 
 .section-and-icon h4 {
+  color: white;
   margin: 0px;
   padding: 16px 13px;
-  border-right: 1.5px solid black;
+  border-right: 1.5px solid #ebebeb;
   text-align: right;
+}
+
+.copyright-section {
+  background-color: #050505;
+  text-align: center;
+  height: 58px;
+  /* margin: 0px 70px; */
+  padding: 21px 0px;
+}
+
+.copyright-section span {
+  color: #626262;
 }
 
 @media screen and (max-width: 678px) {
@@ -615,15 +635,4 @@ body {
   .name-button {
     width: 100%;
   }
-}
-
-.copyright-section {
-  text-align: center;
-  height: 58px;
-  margin: 0px 70px;
-  padding: 21px 0px;
-}
-
-.copyright-section span {
-  color: #e6aeae;
 }
