@@ -1,5 +1,4 @@
-#Template Website
-https://ultraviolette.qodeinteractive.com/
+[Template Website](https://ultraviolette.qodeinteractive.com/)
 
 # Səhifələr
 1. Home
