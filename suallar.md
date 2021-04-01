@@ -20,7 +20,7 @@
 5. Operator precedence nədir və əhəmiyyətini izah edin
     - Operator precedence operatorların yerinə yetirilmə öncüllüyünü bildirir. Bütün operatorlar bərabər səviyəli olmurlar və onlar arasında iyerarxiya mövcud olur. Məsələn, qüvvətə yüksəltmə operatoru vurma operatorundan və o da toplama operatorundan daha güclüdür, bu baxımdan sözügedən 3 operatorun birlikdə işləndiyi statement olduğu zaman ilk öncə qüvvətə yüksəltmə, daha sonra vurma və daha sonra toplama operatorları yerinə yetiriləcək.
 6. Automatic Type Conversion ve Type Conversion Methodlar arasındakı fərqləri izah edin.
-    -Bu barədə araşdırdığım zaman ətraflı məlumat əldə edə bilmədim. Çıxardığım nəticə bu oldu ki, məncə Automatic Type Conversion-la proqramlaşdırma dillərinin sahib olduğu built-in method olaraq Type Conversion Methodlar eyni və ya bənzərdir. Hər ikisi zəif data tipini güclü data tipinə çevirirlər yanlış anlamamışamsa, amma fərq olmasa dilə əlavə olaraq belə built-in methodlar niyə qoyulsunki? Təəssüf ki, bu fərqləri göstərəcək bir mənbə tapmağım mümkün olmadı.
+    - Bu barədə araşdırdığım zaman ətraflı məlumat əldə edə bilmədim. Çıxardığım nəticə bu oldu ki, məncə Automatic Type Conversion-la proqramlaşdırma dillərinin sahib olduğu built-in method olaraq Type Conversion Methodlar eyni və ya bənzərdir. Hər ikisi zəif data tipini güclü data tipinə çevirirlər yanlış anlamamışamsa, amma fərq olmasa dilə əlavə olaraq belə built-in methodlar niyə qoyulsunki? Təəssüf ki, bu fərqləri göstərəcək bir mənbə tapmağım mümkün olmadı.
 7. Implicit ve Explicit type conversiton nədir?
     - Implicit çevirmə zəif data tipini güclü data tipinə çevirir:
     `char` -> `int` -> `long` -> `float` -> `double`

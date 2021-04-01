@@ -1,0 +1,39 @@
+.todo {
+  width: 60%;
+  margin: 2% auto 0 auto;
+}
+
+.input {
+  display: flex;
+  border: 1px solid black;
+}
+
+.input input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid black;
+}
+
+.button {
+  font-size: 25px;
+  border: none;
+  padding: 0;
+  height: 47px;
+  width: 47px;
+  background-color: black;
+  color: white;
+}
+
+.output p {
+  padding: 13px;
+  margin: 0px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.output {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%;
+  border: 1px solid black;
+}

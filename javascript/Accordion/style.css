@@ -1,0 +1,51 @@
+#section-5 {
+  margin: 0px;
+  padding-bottom: 210px;
+}
+
+.careers {
+  margin-left: 200px;
+}
+
+.name-button {
+  width: 500px;
+  height: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.career-button {
+  font-family: 'Mulish';
+  border-style: none;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  border: 1px solid black;
+}
+
+.professions ul {
+  overflow: hidden;
+  height: 0;
+  margin: 0;
+  /*transition: all 1s;
+  transition-timing-function: ease-in-out;*/
+}
+
+.professions li {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  line-height: 24px;
+  margin:0px;
+  margin-top: 15px;
+}
+
+
+.info {
+  width: 70%;
+  margin: 0px auto;
+  display: flex;
+  justify-content: space-between;
+}

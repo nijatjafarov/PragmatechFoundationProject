@@ -21,6 +21,20 @@ function autoScroll(){
 
 function currentSlide(position) {
   slideCont.style.transform = `translateX(${position}px)`;
+
+  if (position == 0) {
+    leftBtn.style.cursor = "not-allowed";
+    leftBtn.disabled = true;
+  } else if (position == -3*slideWidth) {
+    rightBtn.style.cursor = "not-allowed";
+    rightBtn.disabled = true;
+  } else {
+    leftBtn.style.cursor = "auto";
+    rightBtn.style.cursor = "auto";
+    rightBtn.disabled = false;
+    leftBtn.disabled = false;
+  }
+
   for(var i = 0; i < roundedBtns.length; i++){
     roundedBtns[i].style.backgroundColor = "rgb(0, 0, 0, 0.4)";
   }
@@ -57,4 +71,3 @@ function changeSlide(n) {
   pos = -slideWidth*n;
     currentSlide(pos);
 }
-

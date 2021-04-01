@@ -60,6 +60,10 @@ body {
   color: rgb(0, 0, 0, 0);
 }
 
+#left {
+  cursor: not-allowed;
+}
+
 .rounded-buttons {
   margin-top: 3%;
   display: flex;

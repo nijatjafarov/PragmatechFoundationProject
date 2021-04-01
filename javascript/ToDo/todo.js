@@ -1,26 +1,19 @@
 
-let todo=document.querySelector('.todo')
-let single=`
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Kategoriya..">
-                        <div class="input-group-append">
-                            <span class="input-group-text" id="plus" onclick='addBlock()'>+</span>
-                            <span class="input-group-text" id="minus" onclick='removeBlock(this)'>-</span>
-                        </div>
-                    </div>
-`
+var todo = document.querySelector('.todo');
+var inputPart = document.querySelector(".input");
 
-let content=single;
+function addBlock() {
+  var input = document.getElementsByTagName('input')[0].value;
 
-
-function addBlock(){
-    content+=single
-    todo.innerHTML=content;
+  var single=`
+  <div class="output">
+    <p>${input}</p>
+    <button class="button" id="minus" onclick='removeBlock(this)'>-</button>
+  </div>
+  `
+    todo.innerHTML += single;
 }
 
-function removeBlock(elem){
-    if (content != single) {
-        content = content.replace(single, "")
-        todo.innerHTML=content;
-    }
+function removeBlock(element){
+    todo.removeChild(element.parentElement);
 }
