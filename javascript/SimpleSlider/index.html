@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <title></title>
   </head>
-  <body onload="autoScroll()">
+  <body>
     <div class="slider">
       <div class="slider-main" onmouseover="buttonShow()" onmouseout="buttonHide()">
         <div class="slide-container">
@@ -28,19 +28,19 @@
           </div>
         </div>
         <div class="buttons">
-          <button id="left" onclick="turnLeft()" disabled>
-            <i class="fas fa-chevron-left"></i>
+          <button id="left" onclick="turnLeft()" onmouseover="hoverColorArrow(this)" onmouseout="normalColorArrow(this)" disabled>
+            <i class="fas fa-chevron-left" ></i>
           </button>
-          <button id="right" onclick="turnRight()">
+          <button id="right" onclick="turnRight()" onmouseover="hoverColorArrow(this)" onmouseout="normalColorArrow(this)">
             <i class="fas fa-chevron-right"></i>
           </button>
         </div>
       </div>
       <div class="rounded-buttons">
-        <div class="rounded-button" onclick="changeSlide(0)"></div>
-        <div class="rounded-button" onclick="changeSlide(1)"></div>
-        <div class="rounded-button" onclick="changeSlide(2)"></div>
-        <div class="rounded-button" onclick="changeSlide(3)"></div>
+        <div class="rounded-button" onmouseover="hoverColor(this)" onmouseout="normalColor(this)" onclick="changeSlide(0)"></div>
+        <div class="rounded-button" onmouseover="hoverColor(this)" onmouseout="normalColor(this)" onclick="changeSlide(1)"></div>
+        <div class="rounded-button" onmouseover="hoverColor(this)" onmouseout="normalColor(this)" onclick="changeSlide(2)"></div>
+        <div class="rounded-button" onmouseover="hoverColor(this)" onmouseout="normalColor(this)" onclick="changeSlide(3)"></div>
       </div>
     </div>
 

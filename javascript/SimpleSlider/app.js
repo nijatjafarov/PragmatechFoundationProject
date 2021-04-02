@@ -1,11 +1,18 @@
-var slideWidth = document.querySelector(".slider-main").offsetWidth;
+var sliderMain = document.querySelector(".slider-main");
 var slideCont = document.querySelector(".slide-container");
 var slides = document.querySelectorAll(".slide");
-var buttons = document.querySelector('.buttons')
+var buttons = document.querySelector('.buttons');
 var leftBtn = document.getElementById('left');
 var rightBtn = document.getElementById('right');
 var roundedBtns = document.getElementsByClassName("rounded-button");
 var pos = 0;
+var slideWidth = sliderMain.offsetWidth;
+
+
+//sliderMain.style.height = sliderMain.clientWidth*0.7 + 'px';  ISLET
+
+
+
 
 for (var i = 0; i < slides.length; i++) {
   slides[i].style.width = slideWidth + 'px';
@@ -13,11 +20,9 @@ for (var i = 0; i < slides.length; i++) {
 
 slideCont.style.width = slideWidth*slides.length + 'px';
 
-roundedBtns[0].style.backgroundColor = "rgb(0, 0, 0, 1)";
+roundedBtns[0].style.backgroundColor = "rgba(0, 0, 0, 1)";
 
-function autoScroll(){
-  hey = setInterval(turnRight, 3000);
-}
+var autoScroll = setInterval(scrollRight, 2500);
 
 function currentSlide(position) {
   slideCont.style.transform = `translateX(${position}px)`;
@@ -25,49 +30,81 @@ function currentSlide(position) {
   if (position == 0) {
     leftBtn.style.cursor = "not-allowed";
     leftBtn.disabled = true;
-  } else if (position == -3*slideWidth) {
+  } else if (position == -(slides.length-1)*slideWidth) {
     rightBtn.style.cursor = "not-allowed";
     rightBtn.disabled = true;
   } else {
-    leftBtn.style.cursor = "auto";
-    rightBtn.style.cursor = "auto";
+    leftBtn.style.cursor = "pointer";
+    rightBtn.style.cursor = "pointer";
     rightBtn.disabled = false;
     leftBtn.disabled = false;
   }
 
-  for(var i = 0; i < roundedBtns.length; i++){
-    roundedBtns[i].style.backgroundColor = "rgb(0, 0, 0, 0.4)";
-  }
-  roundedBtns[Math.abs(position/slideWidth)].style.backgroundColor = "rgb(0, 0, 0, 1)";
+
 }
 
 function buttonShow() {
   buttons.style.width = '60%';
-  leftBtn.style.color = "rgb(0, 0, 0, 1)";
-  rightBtn.style.color = "rgb(0, 0, 0, 1)";
+  leftBtn.style.color = "rgba(0, 0, 0, 0.5)";
+  rightBtn.style.color = "rgba(0, 0, 0, 0.5)";
 }
 
 function buttonHide() {
   buttons.style.width = '70%';
-  leftBtn.style.color = "rgb(0, 0, 0, 0)";
-  rightBtn.style.color = "rgb(0, 0, 0, 0)";
+  leftBtn.style.color = "rgba(0, 0, 0, 0)";
+  rightBtn.style.color = "rgba(0, 0, 0, 0)";
 }
 
 function turnLeft() {
+  clearInterval(autoScroll)
   if ( pos <= -slideWidth ) {
     pos += slideWidth;
     currentSlide(pos);
+    roundedBtns[Math.abs(pos/slideWidth)].style.backgroundColor = "rgba(0, 0, 0, 1)";
+    roundedBtns[Math.abs(pos/slideWidth)].nextElementSibling.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  }
+}
+
+function scrollRight() {
+  if ( pos >= -slideWidth*(slides.length-2) ) {
+    pos -= slideWidth;
+    currentSlide(pos);
+    roundedBtns[Math.abs(pos/slideWidth)].style.backgroundColor = "rgba(0, 0, 0, 1)";
+    roundedBtns[Math.abs(pos/slideWidth)].previousElementSibling.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
   }
 }
 
 function turnRight() {
-  if ( pos >= -slideWidth*2 ) {
-    pos -= slideWidth;
-    currentSlide(pos);
-  }
+  clearInterval(autoScroll);
+  scrollRight();
 }
 
 function changeSlide(n) {
+  clearInterval(autoScroll);
   pos = -slideWidth*n;
-    currentSlide(pos);
+  currentSlide(pos);
+  for(var i = 0; i < roundedBtns.length; i++) {
+    roundedBtns[i].style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  }
+  roundedBtns[Math.abs(pos/slideWidth)].style.backgroundColor = "rgba(0, 0, 0, 1)";
+}
+
+function hoverColor(button) {
+  if (button.style.backgroundColor == "rgba(0, 0, 0, 0.4)") {
+    button.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+  }
+}
+
+function normalColor(button) {
+  if (button.style.backgroundColor == "rgba(0, 0, 0, 0.7)") {
+    button.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  }
+}
+
+function hoverColorArrow(arrowBtn) {
+  arrowBtn.children[0].style.color = "rgba(0, 0, 0, 1)";
+}
+
+function normalColorArrow(arrowBtn) {
+  arrowBtn.children[0].style.color = "inherit";
 }

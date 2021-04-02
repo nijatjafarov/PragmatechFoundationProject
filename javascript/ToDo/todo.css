@@ -8,6 +8,10 @@
   border: 1px solid black;
 }
 
+button {
+  cursor: pointer;
+}
+
 .input input {
   width: 100%;
   padding: 15px;
@@ -29,9 +33,11 @@
   margin: 0px;
   width: 100%;
   border: 1px solid black;
+  cursor: pointer;
 }
 
 .output {
+  height: 47px;
   display: flex;
   justify-content: space-between;
   margin-top: 2%;

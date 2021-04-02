@@ -51,13 +51,14 @@ body {
 }
 
 .buttons button {
+  cursor: pointer;
   margin: 0px 20px;
   font-size: 40px;
   background: none;
   border: none;
   transition: all 0.2s;
   transition-timing-function: ease-in-out;
-  color: rgb(0, 0, 0, 0);
+  color: rgba(0, 0, 0, 0);
 }
 
 #left {
