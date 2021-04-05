@@ -7,10 +7,10 @@ body {
 }
 
 .content {
-  /* position: absolute;
+   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); */
+  transform: translate(-50%, -42%);
   width: 93%;
   display: flex;
   margin: 0px auto;
@@ -65,6 +65,10 @@ body {
 @media screen and (max-width: 1025px) {
   .content {
     flex-direction: column;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
   }
 
   .photo {

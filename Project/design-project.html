@@ -19,12 +19,13 @@
         <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
       </div>
       <div class="navbar-and-icon">
+        <div class="highlighter"></div>
         <div class="navbar">
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+            <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+            <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+            <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
           </ul>
         </div>
         <div class="icon">
@@ -38,7 +39,52 @@
               <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
             </svg>
           </div>
-          <div class="hamburger-menu">
+          <div class="hamburger-menu" onclick="openCloseMenu()">
+            <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="21" height="1"></rect>
+              <rect x="20" y="19" width="21" height="1"></rect>
+              <rect y="10" width="41" height="1"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="opened-menu">
+      <ul>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="index.html">Home</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="portfolio.html">Portfolio</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="about.html">About</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <section id="top" class="scroll header">
+      <div class="logo">
+        <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+      </div>
+      <div class="navbar-and-icon">
+        <div class="highlighter"></div>
+        <div class="navbar">
+          <ul>
+            <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+            <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+            <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+            <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="icon">
+          <div class="corner-icon">
+            <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="41" height="1"></rect>
+              <rect y="19" width="41" height="1"></rect>
+              <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+            </svg>
+          </div>
+          <div class="hamburger-menu" onclick="openCloseMenu()">
             <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
               <rect width="21" height="1"></rect>
               <rect x="20" y="19" width="21" height="1"></rect>
@@ -50,7 +96,7 @@
     </section>
 
     <div class="back-to-top">
-      <a href="#top">back to top +</a>
+      back to top +
     </div>
 
     <div class="next-previous next-project">
@@ -70,13 +116,13 @@
           </div>
           <div class="imgs">
             <div class="img">
-              <img src="img/design-project.jpeg" alt="">
+              <img src="img/design-project01.jpeg" alt="" onclick="showImg(1)">
             </div>
             <div class="img">
-              <img src="img/design-project.jpeg" alt="">
+              <img src="img/design-project02.jpeg" alt="" onclick="showImg(2)">
             </div>
             <div class="img">
-              <img src="img/design-project.jpeg" alt="">
+              <img src="img/design-project03.jpeg" alt="" onclick="showImg(3)">
             </div>
           </div>
           <div class="project-info">
@@ -154,6 +200,27 @@
       </div>
     </section>
 
+    <div class="background">
+      <div class="slider">
+        <i id="expand-icon" class="fas fa-expand"></i>
+        <div class="slide" onmouseover="showBtns()" onmouseout="hideBtns()">
+          <img src="img/design-project01.jpeg" alt="">
+          <div class="arrows">
+            <button id="leftBtn" onclick="changeBefore()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="rightBtn" onclick="changeNext()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="slide-bottom">
+
+          <p id="page-info"><span> 1 </span> / <span> 3 </span></p>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer start -->
     <section class="footer">
         <div class="logo-contact1">
@@ -217,5 +284,7 @@
     <div class="copyright-section">
       <span class="mulish-1">&copy 2019 Qode Interactive, All Rights Reserved</span>
     </div>
+
+    <script src="app.js"></script>
   </body>
 </html>
