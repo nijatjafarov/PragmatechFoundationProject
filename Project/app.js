@@ -42,6 +42,9 @@ var openedMenu = document.querySelector(".opened-menu");
 var open = false;
 
 openedMenu.style.width = document.body.offsetWidth-100 + "px";
+function openedMenuSize() {
+  openedMenu.style.width = document.body.offsetWidth-100 + "px";
+}
 
 function highlight(num) {
   highlighter.style.width = navbarSections[num].offsetWidth + "px";
@@ -145,21 +148,24 @@ var expandIcon = document.querySelector("#expand-icon");
 var currentSlide;
 
 background.style.height = document.body.offsetHeight + 'px';
-// function hideBackground(bckgrnd) {
-//   bckgrnd.style.opacity = "0";
-// }
+function hideBackground(event) {
+  if (event.target == background) {
+    background.style.opacity = "0";
+    background.style.display = "none";
+    slider.style.width = "950px";
+    arrows.style.width = "950px";
+  }
+}
 
 function showImg(index) {
   currentSlide = index;
   pageInfo.children[0].innerHTML = currentSlide;
-  //slide.replaceChild(imgs[currentSlide-1].firstElementChild, slide.firstElementChild)
   slide.firstElementChild.setAttribute("src", `img/design-project0${currentSlide}.jpeg`);
-  background.style.display = "block"
+  background.style.display = "block";
+  setTimeout(function(){
+    background.style.opacity = "1";
+  }, 100);
 }
-
-// background.addEventListener("click", function() {
-//   background.style.display = "none";
-// })
 
 function showBtns() {
   arrows.style.opacity = "1";

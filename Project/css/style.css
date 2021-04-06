@@ -240,7 +240,7 @@ body {
 }
 
 .about {
-  transition: 1s cubic-bezier(.71,.13,.25,1);
+  transition: 0.7s cubic-bezier(.71,.13,.25,1);
   transition-timing-function: ease-in-out;
   transform: rotate(5deg);
   transform-origin: 50% 0;
@@ -274,6 +274,16 @@ body {
 .table-item {
   width: 14.5%;
   position: relative;
+}
+
+.table-item img {
+  filter: grayscale(1);
+  transition: all 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.table-item img:hover {
+  filter: grayscale(0);
 }
 
 .services-item h3 {
@@ -476,6 +486,7 @@ body {
   justify-content: space-between;
   border-bottom: 1px solid black;
   margin-bottom: 20px;
+  cursor: pointer;
 }
 
 .career-button {
@@ -485,6 +496,8 @@ body {
   width: 30px;
   height: 30px;
   padding: 0px;
+  border: 1px solid black;
+  cursor: pointer;
 }
 
 .professions {
@@ -494,6 +507,8 @@ body {
 .professions ul {
   padding-inline-start: 30px;
   margin: 0px;
+  overflow: hidden;
+  height: 0;
 }
 
 .professions li {

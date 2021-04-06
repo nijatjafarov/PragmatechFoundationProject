@@ -11,20 +11,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title></title>
   </head>
-  <body>
+  <body onresize="dynamicSizes()">
     <section class="total-first-screen">
       <!-- Header start -->
       <section id="top" class="header">
         <div class="logo">
-          <a href="#about.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+          <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
         </div>
         <div class="navbar-and-icon">
+          <div class="highlighter"></div>
           <div class="navbar">
             <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+              <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="icon">
@@ -38,7 +39,7 @@
                 <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
               </svg>
             </div>
-            <div class="hamburger-menu">
+            <div class="hamburger-menu" onclick="openCloseMenu()">
               <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
                 <rect width="21" height="1"></rect>
                 <rect x="20" y="19" width="21" height="1"></rect>
@@ -48,6 +49,52 @@
           </div>
         </div>
       </section>
+
+      <div class="opened-menu">
+        <ul>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="index.html">Home</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="portfolio.html">Portfolio</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="about.html">About</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <section id="top" class="scroll header">
+        <div class="logo">
+          <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+        </div>
+        <div class="navbar-and-icon">
+          <div class="highlighter"></div>
+          <div class="navbar">
+            <ul>
+              <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+              <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="icon">
+            <div class="corner-icon">
+              <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="41" height="1"></rect>
+                <rect y="19" width="41" height="1"></rect>
+                <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              </svg>
+            </div>
+            <div class="hamburger-menu" onclick="openCloseMenu()">
+              <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="21" height="1"></rect>
+                <rect x="20" y="19" width="21" height="1"></rect>
+                <rect y="10" width="41" height="1"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- Header end -->
       <!-- First Screen start -->
       <section class="first-screen">
@@ -71,7 +118,7 @@
 
     <section class="rest-of-page">
       <div class="back-to-top">
-        <a href="#top">back to top +</a>
+        back to top +
       </div>
       <div class="about">
         <h6>ABOUT OUR DESIGN</h6>
@@ -86,27 +133,27 @@
           <div class="table-row">
             <div class="table-item">
               <div class="square">
-                <img src="img/services-1.jpg" alt="">
+                <img src="img/services-1.jpg" alt="" onmouseover="getColoredItself(this)" onmouseout="getBlackWhiteItself(this)">
               </div>
               <h3 class="bebas-main">USER ORIENTED</h3>
               <p class="mulish-1">Lorem ipsum dolor sit amet, consectetur adipiscing tu elit us quisque ut urna lacus.</p>
-              <button class="main-button">Read More +</button>
+              <button class="main-button" onmouseover="getColored(this)" onmouseout="getBlackWhite(this)">Read More +</button>
             </div>
             <div class="table-item">
               <div class="square">
-                <img src="img/services-1.jpg" alt="">
+                <img src="img/services-1.jpg" alt="" onmouseover="getColoredItself(this)" onmouseout="getBlackWhiteItself(this)">
               </div>
               <h3 class="bebas-main">USER ORIENTED</h3>
               <p class="mulish-1">Lorem ipsum dolor sit amet, consectetur adipiscing tu elit us quisque ut urna lacus.</p>
-              <button class="main-button">Read More +</button>
+              <button class="main-button" onmouseover="getColored(this)" onmouseout="getBlackWhite(this)">Read More +</button>
             </div>
             <div class="table-item">
               <div class="square">
-                <img src="img/services-1.jpg" alt="">
+                <img src="img/services-1.jpg" alt="" onmouseover="getColoredItself(this)" onmouseout="getBlackWhiteItself(this)">
               </div>
               <h3 class="bebas-main">USER ORIENTED</h3>
               <p class="mulish-1">Lorem ipsum dolor sit amet, consectetur adipiscing tu elit us quisque ut urna lacus.</p>
-              <button class="main-button">Read More +</button>
+              <button class="main-button" onmouseover="getColored(this)" onmouseout="getBlackWhite(this)">Read More +</button>
             </div>
           </div>
         </div>
@@ -234,7 +281,7 @@
             <h1 class="section-headers">Team</h1>
           </div>
           <div class="table-row">
-            <div class="table-item">
+            <div class="table-item team-item">
               <div class="square">
                 <img src="img/team-1.jpg" alt="">
               </div>
@@ -247,7 +294,7 @@
               <h3 class="bebas-main">Marie Fleur</h3>
               <p class="mulish-2">UI / UX Designer</p>
             </div>
-            <div class="table-item">
+            <div class="table-item team-item">
               <div class="square">
                 <img src="img/team-1.jpg" alt="">
               </div>
@@ -260,7 +307,7 @@
               <h3 class="bebas-main">Marie Fleur</h3>
               <p class="mulish-2">UI / UX Designer</p>
             </div>
-            <div class="table-item">
+            <div class="table-item team-item">
               <div class="square">
                 <img src="img/team-1.jpg" alt="">
               </div>
@@ -436,6 +483,6 @@
     <div class="copyright-section">
       <span class="mulish-1">&copy 2019 Qode Interactive, All Rights Reserved</span>
     </div>
-    <script src="app.js"></script>
+    <script src="home.js"></script>
   </body>
 </html>

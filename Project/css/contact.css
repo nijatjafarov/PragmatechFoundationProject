@@ -19,6 +19,7 @@
 
 .contact-img {
   width: 100%;
+  overflow: hidden;
 }
 
 .contact-img img {

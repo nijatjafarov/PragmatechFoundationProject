@@ -16,15 +16,21 @@ body {
   margin: 0px auto;
 }
 
-.photo, .designer-info {
+.photo-part, .designer-info {
   margin: 2% auto;
   display: flex;
   align-items: center;
   width: 50%;
 }
 
-.photo img {
+.photo {
   width: 96%;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  object-fit: cover;
 }
 
 .designer-info-inside {
@@ -71,7 +77,7 @@ body {
     transform: none;
   }
 
-  .photo {
+  .photo-part {
     width: 80%;
     margin: 10% auto;
   }
