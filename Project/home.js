@@ -13,8 +13,35 @@ var firstScreen = document.querySelector(".first-screen");
 var restOfPage = document.querySelector(".rest-of-page");
 var smSideBar = document.querySelector(".sm-sidebar")
 var open = false;
+var currentImg = 0;
 
 firstScreen.style.height = window.innerHeight - 105 + "px";
+
+function changeNext(){
+  if(currentImg == 2) {
+    currentImg = 0;
+  } else {
+    currentImg += 1;
+  }
+  firstScreen.firstElementChild.style.opacity = "0";
+  setTimeout(function(){
+    firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
+    firstScreen.firstElementChild.style.opacity = "1";
+  }, 800);
+}
+
+function changePrev(){
+  if(currentImg == 0) {
+    currentImg = 2;
+  } else {
+    currentImg -= 1;
+  }
+  firstScreen.firstElementChild.style.opacity = "0";
+  setTimeout(function(){
+    firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
+    firstScreen.firstElementChild.style.opacity = "1";
+  }, 800);
+}
 
 var workSquares = document.querySelectorAll(".work-square");
 var squares = document.querySelectorAll(".square");
@@ -22,7 +49,7 @@ for( var i = 0; i < squares.length; i++) {
   squares[i].style.height = squares[i].clientWidth + "px";
 }
 for( var i = 0; i < workSquares.length; i++) {
-  workSquares[i].style.height = workSquares[i].clientWidth - 24 + "px";
+  workSquares[i].style.height = workSquares[i].clientWidth - 20 + "px";
 }
 
 openedMenu.style.width = document.body.offsetWidth-100 + "px";
@@ -118,7 +145,7 @@ var careerBtns = document.querySelectorAll(".career-button");
 var ul = document.getElementsByTagName("ul")
 
 lists[0].style.height = 'auto';
-lists[0].style.margin = '20px 0px 20px 30px';
+lists[0].style.margin = '40px 0px';
 careerBtns[0].innerHTML = "-";
 
 function controlList(elem) {
@@ -127,7 +154,7 @@ function controlList(elem) {
         for (var i = 0; i < lists.length; i++) {
           if (lists[i] == thisList) {
             thisList.style.height = 'auto';
-            thisList.style.margin = '20px 0px 20px 30px';
+            thisList.style.margin = '40px 0px';
             elem.children[1].innerHTML = "-";
           } else {
             lists[i].style.height = 0;
