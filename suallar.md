@@ -25,8 +25,8 @@
     - Implicit çevirmə zəif data tipini güclü data tipinə çevirir:
     `char` -> `int` -> `long` -> `float` -> `double`
     Implicit Type Conversion(Automatic) tip çevirmənin compiler tərəfindən yerinə yetirildiyi çevirmədir, digər tip çevirmə olan Explicit Type Conversion(Manual) isə çevirmənin developer tərəfindən edildiyi çevrilmədir. Burada isə əksinə olaraq güclü data tip zəif data tipə çevrilir:
-    `double` -> `float` -> `long` -> `int` -> `char`
-    Məsələn:
+    `double` -> `float` -> `long` -> `int` -> `char` Məsələn:
+
 
     ```c
     double da = 3.3;
@@ -38,3 +38,5 @@
     ```
 
     Nümunədən göründüyü kimi Implicit çevirmədə bir dəyər digərinə olduğu kimi mənimsədilir. Explicit çevirmədə isə mənimsədilən dəyərin qarşısına çevrilmək istədiyi data tipi bildirilir. Implicit çevrilmənin dezavantajı çevirməni compiler apardığı üçün bəzən gözlənilən nəticənin alınmaması ola bilər, digərində isə developer birbaşa özü müdaxilə edir. Bundan başqa bəzi data tipləri vardır ki, bunlar çevrilməyə uyğun deyillər (Məs: boolean və char) və ya  bu zaman Explicit çevrilmə zamanı xəta baş verir. Bundan başqa böyük data tipi kiçik data tipə çevirən zaman (Məs: float -> integer) datada itki baş verə bilər (Məs: 7.23 -> 7).
+8. List,Tuple,Dict data növləri arasındakı oxşar və fərqli cəhətlər nələrdir?
+    - List, Tuple və Dict, üçünün oxşar cəhəti içlərinə bir neçə data yerləşdirməyin mümkünlüyüdür. Dict-in digər ikisindən fərqi unordered data, digərlərinin isə ordered data tipi olmasıdır. List və Tuple-dan fərqli olaraq Dict-də index hər hansı bir məna daşımır. Burada key-value prinsipindən istifadə olunur. Tuple-ın List və Dict-dən fərqi immutable olmasıdır. Buna görə də Tuple-a data əlavə edib çıxarmaq, həmçinin dəyişdirmək olmaz. Digərləri üçün isə bu hal keçərli deyil. List-in Dictdən fərqi ordered data tipi olması, Tuple-dan fərqi isə mutable olmasıdır. Yəni List-də elementlərin yerləşdiyi index məna daşıyır və List data əlavə edib çıxarmağa, həmçinin dəyişməyə imkan verir.
