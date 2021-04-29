@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Update Book</h1>
+    <form action="/update/{{book.id}}" method="POST">
+        <div class="form-group">
+            <label for="newName">New Book Name</label>
+            <input type="text" class="form-control" id="name" name="newName" value="{{book.name}}">
+        </div>
+        <div class="form-group">
+            <label for="newAuthor">New Book Author</label>
+            <input type="text" class="form-control" id="author" name="newAuthor" value="{{book.author}}">
+        </div>
+        <div class="form-group">
+            <label for="newCost">New Book Cost</label>
+            <input type="text" class="form-control" id="cost" name="newCost" value="{{book.price}}">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+{% endblock %}
