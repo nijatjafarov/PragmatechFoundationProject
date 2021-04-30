@@ -1,64 +1,54 @@
 from flask import Flask, render_template, request, redirect
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
 
-books = []
-bookId = 1
-class Book:
-    def __init__(self, _id, _name, _author, _price):
-        self.id = _id
-        self.name = _name
-        self.author = _author
-        self.price = _price
+db = SQLAlchemy(app)
+
+class Book(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    name = db.Column(db.String(50), nullable = False)
+    author = db.Column(db.String(30), nullable = False)
+    price = db.Column(db.Integer, nullable = False)
+
+    def __repr__(self):
+        return f"Book('{self.name}', '{self.author}', '{self.price}')"
 
 @app.route("/")
 @app.route("/show")
 def show():
+    books = Book.query.all()
     return render_template("show.html", books = books)
 
 @app.route("/add", methods=["GET", "POST"])
 def add():
-    global bookId
     if request.method=='POST':
         bookName = request.form["name"]
         bookAuthor = request.form["author"]
-        bookPrice = request.form["cost"]
-        books.append(Book(bookId, bookName, bookAuthor, bookPrice))
-        bookId += 1
+        bookPrice = int(request.form["cost"])
+        book = Book(name=bookName, author=bookAuthor, price=bookPrice)
+        db.session.add(book)
+        db.session.commit()
         return render_template("add.html")
     return render_template("add.html")
 
-@app.route("/delete/<int:id>", methods = ["GET"])
+@app.route("/delete/<int:id>")
 def delete(id):
-    for book in books:
-        if id == book.id:
-            books.remove(book)
-            return redirect("/")
+    db.session.delete(Book.query.get(id))
+    db.session.commit()
     return redirect("/")
-
-# @app.route("/update/<int:id>", methods = ["GET", "POST"])
-# def update(id):
-#     book = None
-#     if request.method == "POST":
-#         for i in range(len(books)):
-#             if id == books[i].id:
-#                 books[i].name = request.form["newName"]
-#                 books[i].author = request.form["newAuthor"]
-#                 books[i].price = request.form["newCost"]
-#                 book = books[i]
-#                 return redirect("/")
-#     return render_template("update.html", book=books[0])
-
 
 @app.route("/update/<int:id>", methods = ["GET", "POST"])
 def update(id):
-    for i in range(len(books)):
-        if id == books[i].id:
-            if request.method == "POST":
-                books[i].name = request.form["newName"]
-                books[i].author = request.form["newAuthor"]
-                books[i].price = request.form["newCost"]
-                return redirect("/")
-            return render_template("update.html", book=books[i])
+    book = Book.query.get(id)
+    if request.method == "POST":
+        book.name = request.form["newName"]
+        book.author = request.form["newAuthor"]
+        book.price = request.form["newCost"]
+        db.session.commit()
+        return redirect("/")
+    return render_template("update.html", book=book)
+
 if __name__ == "__main__":
     app.run(debug=True)
