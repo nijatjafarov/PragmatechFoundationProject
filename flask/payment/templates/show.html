@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+{% block content %}
+<h3 style="margin-bottom: 2%">Billing address</h3>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Username</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adress</th>
+        <th scope="col">Adress2</th>
+        <th scope="col">Country</th>
+        <th scope="col">State</th>
+        <th scope="col">Zip</th>
+        <th scope="col">Ship-Billing Identity</th>
+        <th scope="col">Save Info</th>
+      </tr>
+    </thead>
+    <tbody >
+        {% for location in addresses%}
+            <tr>
+                <th scope="row">{{ location.id }}</th>
+                <td>{{ location.fname }}</td>
+                <td>{{ location.lname }}</td>
+                <td>{{ location.username }}</td>
+                <td>{{ location.email }}</td>
+                <td>{{ location.address }}</td>
+                <td>{{ location.address2 }}</td>
+                <td>{{ location.country }}</td>
+                <td>{{ location.state }}</td>
+                <td>{{ location.zip_code }}</td>
+                <td>{{ location.ship_billing_id }}</td>
+                <td>{{ location.save_info }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+        <h3 style="margin: 5% 0 2% 0">Payment</h3>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Payment option</th>
+        <th scope="col">Name on Card</th>
+        <th scope="col">Card Number</th>
+        <th scope="col">Expiration</th>
+        <th scope="col">CVV</th>
+      </tr>
+    </thead>
+    <tbody >
+        {% for payment in payments %}
+            <tr>
+                <th scope="row">{{ payment.id }}</th>
+                <td>{{ payment.payment_option }}</td>
+                <td>{{ payment.name_on_card }}</td>
+                <td>{{ payment.card_number }}</td>
+                <td>{{ payment.expiration }}</td>
+                <td>{{ payment.cvv }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

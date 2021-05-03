@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/addproduct" method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="formGroupExampleInput">Product Name</label>
+      <input type="text" class="form-control" id="formGroupExampleInput" name="name" placeholder="Enter product name">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput2">Short Description</label>
+      <input type="text" class="form-control" id="formGroupExampleInput2" name="short_desc" placeholder="You can tell something about product">
+    </div>
+    <div class="form-group">
+      <label for="formGroupExampleInput3">Price</label>
+      <input type="number" class="form-control" id="formGroupExampleInput3" name="price" min="0">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Import an image</label>
+        <input type="file" class="form-control-file" id="exampleFormControlFile1" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+{% endblock%}
