@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title></title>
+  </head>
+  <body onresize="dynamicSizes()">
+    <section class="total-first-screen">
+      <!-- Header start -->
+      <section id="top" class="header">
+        <div class="logo">
+          <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+        </div>
+        <div class="navbar-and-icon">
+          <div class="highlighter"></div>
+          <div class="navbar">
+            <ul>
+              <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+              <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="icon">
+            <div class="corner-icon">
+              <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="41" height="1"></rect>
+                <rect y="19" width="41" height="1"></rect>
+                <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              </svg>
+            </div>
+            <div class="hamburger-menu" onclick="openCloseMenu()">
+              <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="21" height="1"></rect>
+                <rect x="20" y="19" width="21" height="1"></rect>
+                <rect y="10" width="41" height="1"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="opened-menu">
+        <ul>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="index.html">Home</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="portfolio.html">Portfolio</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="about.html">About</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <section id="top" class="scroll header">
+        <div class="logo">
+          <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+        </div>
+        <div class="navbar-and-icon">
+          <div class="highlighter"></div>
+          <div class="navbar">
+            <ul>
+              <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+              <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="icon">
+            <div class="corner-icon">
+              <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="41" height="1"></rect>
+                <rect y="19" width="41" height="1"></rect>
+                <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              </svg>
+            </div>
+            <div class="hamburger-menu" onclick="openCloseMenu()">
+              <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="21" height="1"></rect>
+                <rect x="20" y="19" width="21" height="1"></rect>
+                <rect y="10" width="41" height="1"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Header end -->
+      <!-- First Screen start -->
+      <section class="first-screen">
+        {% for slide in slides %}
+        <img src="static/app/uploads/{{ slide.image }}" alt="slider image">
+        {% endfor %}
+        <div class="corner-buttons">
+          <button class="left" onclick="changePrev()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="right" onclick="changeNext()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </section>
+      <!-- First Screen end -->
+    </section>
+    <div class="sm-sidebar">
+      <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://www.facebook.com/kenan.resulzade.146" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <section class="rest-of-page">
+      <div class="back-to-top">
+        back to top +
+      </div>
+      <div class="about">
+        <h6>{{ about.title }}</h6>
+        <span>{{ about.content }}</span>
+      </div>
+
+      <section id="services" class="cap-and-tabs">
+        <div class="tables">
+          <div class="captions">
+            <h1 class="section-headers">Services</h1>
+          </div>
+          <div class="table-row">
+            {% for profession in professions %}
+              <div class="table-item">
+                <div class="square">
+                  <img src="static/app/uploads/{{ profession.image }}" alt="Service image" onmouseover="getColoredItself(this)" onmouseout="getBlackWhiteItself(this)">
+                </div>
+                <h3 class="bebas-main">{{ profession.name }}</h3>
+                <p class="mulish-1">{{ profession.description }}</p>
+                <button class="main-button" onmouseover="getColored(this)" onmouseout="getBlackWhite(this)">Read More +</button>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+
+      <section id="works" class="cap-and-tabs">
+        <div class="tables">
+          <div class="captions">
+            <h1 class="section-headers">Work</h1>
+          </div>
+          <div class="work-row">
+            <div class="works-item">
+              <h3 class="bebas-main">01.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Images</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">02.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Inspiration</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">03.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+
+              <h4 class="bebas-2">Performance</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">04.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Approach</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">05.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Dexterity</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">06.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Magic Realism</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">07.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Deconstruction</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">08.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">New Stand</h4>
+            </div>
+            <div class="works-item">
+              <h3 class="bebas-main">09.</h3>
+              <div class="work-square">
+                <img src="img/work-1.jpg" alt="">
+                <span class="table-abstract">Abstract</span>
+              </div>
+              <h4 class="bebas-2">Mixtures</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="info">
+        {% for info in infoList %}
+        <div class="h-t">
+          <h1>{{ info.value }}</h1>
+          <h6 class="mulish-1">{{ info.name }}</h6>
+        </div>
+        {% endfor %}
+      </div>
+
+      <section id="team" class="cap-and-tabs">
+        <div class="tables">
+          <div class="captions">
+            <h1 class="section-headers">Team</h1>
+          </div>
+          <div class="table-row">
+            <div class="table-item team-item">
+              <div class="square">
+                <img src="img/team-1.jpg" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">Marie Fleur</h3>
+              <p class="mulish-2">UI / UX Designer</p>
+            </div>
+            <div class="table-item team-item">
+              <div class="square">
+                <img src="img/team-1.jpg" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">Marie Fleur</h3>
+              <p class="mulish-2">UI / UX Designer</p>
+            </div>
+            <div class="table-item team-item">
+              <div class="square">
+                <img src="img/team-1.jpg" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">Marie Fleur</h3>
+              <p class="mulish-2">UI / UX Designer</p>
+            </div>
+          </div>
+          <div class="table-row">
+            <div class="table-item">
+              <div class="square">
+                <img src="img/team-1.jpg" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">Marie Fleur</h3>
+              <p class="mulish-2">UI / UX Designer</p>
+            </div>
+            {% for employer in employers %}
+            <div class="table-item">
+              <div class="square">
+                <img src="static/app/uploads/{{ employer.photo }}" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">{{ employer.fullname }}</h3>
+              <p class="mulish-2">{{ employer.profession }}</p>
+            </div>
+            {% endfor %}
+            <div class="table-item">
+              <div class="square">
+                <img src="img/team-1.jpg" alt="">
+              </div>
+              <div class="team-sidebar">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+              <h3 class="bebas-main">Marie Fleur</h3>
+              <p class="mulish-2">UI / UX Designer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="section-5" class="cap-and-tabs">
+        <div class="tables">
+          <div class="captions">
+            <h1 class="section-headers">Career</h1>
+          </div>
+          <div class="careers">
+            {% for profession in professions %}
+            <div class="professions">
+              <div class="name-button" onclick="controlList(this)">
+                <h2 class="bebas-main">{{ profession.name }}</h2>
+                <button class="career-button">+</button>
+              </div>
+              <ul class="career-list">
+                {% for skill in profession.skills %}
+                <li class="mulish-1">{{ skill.name }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- Footer start -->
+    <section class="footer">
+        <div class="logo-contact1">
+          <div class="logo-section">
+            <div class="logo-and-motto">
+              <img src="img/footer-logo.png" alt="Brand Logo" title="Brand Logo">
+              <span class="mulish-1">Set your creativity free. UltraViolette</span>
+            </div>
+          </div>
+          <div class="contact1-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Contact</h4>
+                <i class="fas fa-location-arrow"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">www.ultraviolette.com</li>
+                  <li class="mulish-1">ultraviolette@qode.com</li>
+                  <li class="mulish-1">Phone: 0035 265 244 58</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="visit-contact2">
+          <div class="visit-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Overview</h4>
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">Portfolio</li>
+                  <li class="mulish-1">About</li>
+                  <li class="mulish-1">Contact</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="contact2-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Social Media</h4>
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">Twitter</li>
+                  <li class="mulish-1">Facebook</li>
+                  <li class="mulish-1">Instagram</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Footer end -->
+
+    <div class="copyright-section">
+      <span class="mulish-1">&copy 2019 Qode Interactive, All Rights Reserved</span>
+    </div>
+    <script src="static/app/javascript/home.js"></script>
+  </body>
+</html>

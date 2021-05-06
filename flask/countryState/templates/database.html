@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content %} 
+    <h3>Countries</h3>
+    <table style="margin-bottom: 5%;" class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for country in countries %}
+                <tr>
+                    <th scope="row">{{ country.id }}</th>
+                    <td>{{ country.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>States</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Country_ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for state in states %}
+                <tr>
+                    <th scope="row">{{ state.id }}</th>
+                    <td>{{ state.name }}</td>
+                    <td>{{ state.country_id }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

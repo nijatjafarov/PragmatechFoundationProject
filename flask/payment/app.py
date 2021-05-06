@@ -5,8 +5,8 @@ import os
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///shipping.db"
-UPLOAD_FOLDER = "./static/uploads/"
-app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
+# UPLOAD_FOLDER = "./static/uploads/"
+# app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 db = SQLAlchemy(app)
 
 class Address(db.Model):
@@ -88,11 +88,13 @@ def add_product():
         name = request.form["name"]
         short_desc = request.form["short_desc"]
         price = request.form["price"]
+        # uploaded_file = request.files['image']
+        # APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+        # UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+        # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+        # uploaded_file.save(os.path.join(UPLOAD_FOLDER),uploaded_file.filename)
         uploaded_file = request.files['image']
-        APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-        UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
-        app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-        uploaded_file.save(os.path.join(UPLOAD_FOLDER),uploaded_file.filename)
+        uploaded_file.save(os.path.join('./static/uploads/'),uploaded_file.filename)
         datetime = str(datetime.datetime.utcnow)
         product = Product(name=name, short_desc=short_desc, price=price, image=uploaded_file.filename, date=date)
         db.session.add(product)

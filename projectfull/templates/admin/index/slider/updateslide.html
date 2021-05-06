@@ -1,0 +1,11 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update Slide</h3>
+<form method="POST" enctype="multipart/form-data">
+<div class="form-group">
+    <label for="image">Choose an image</label>
+    <input type="file" class="form-control" id="image" name="img" value="slide.image">
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

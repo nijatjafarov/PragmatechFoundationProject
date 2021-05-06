@@ -1,0 +1,19 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Add Profession</h3>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="profession_name">Add profession name</label>
+      <input type="text" class="form-control" id="profession_name" name="profession_name" placeholder="Enter profession name">
+    </div>
+    <div class="form-group">
+      <label for="short_desc">Profession short description</label>
+      <textarea class="form-control" id="short_desc" name="short_desc" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="image">Choose an image</label>
+      <input type="file" class="form-control" id="image" name="img">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Add</button>
+</form>
+{% endblock %}

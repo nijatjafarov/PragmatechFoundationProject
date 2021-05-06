@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %} 
+    <form action="/addcountry" method="POST">
+        <div class="form-group">
+        <label for="textInput">Country</label>
+        <input type="text" class="form-control" id="textInput" name="country" placeholder="Enter Country Name">
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+{% endblock %}

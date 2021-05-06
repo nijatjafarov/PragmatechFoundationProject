@@ -1,0 +1,144 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Slider</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Image name</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for slide in slides %}
+      <tr>
+        <td>{{ slide.image }}</td>
+        <td>
+          <a href="/admin/updateslide/{{ slide.id }}">Update</a>
+          <a href="/admin/deleteslide/{{ slide.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<h3>About</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>{{ about.title }}</td>
+        <td>{{ about.content }}</td>
+        <td>
+          <a href="/admin/updateabout">Update</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+
+<h3>Info</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Value</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for info in infoList %}
+      <tr>
+        <td>{{ info.name }}</td>
+        <td>{{ info.value }}</td>
+        <td>
+          <a href="/admin/updateinfo/{{ info.id }}">Update</a>
+          <a href="/admin/deleteinfo/{{ info.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<h3>Employers</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Full name</th>
+      <th scope="col">Profession</th>
+      <th scope="col">Image</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for employer in employers %}
+      <tr>
+        <td>{{ employer.fullname }}</td>
+        <td>{{ employer.profession }}</td>
+        <td>{{ employer.photo }}</td>
+        <td>
+          <a href="/admin/updateemployer/{{ employer.id }}">Update</a>
+          <a href="/admin/deleteemployer/{{ employer.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<h3>Professions</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image name</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for profession in professions %}
+      <tr>
+        <td>{{ profession.name }}</td>
+        <td>{{ profession.description }}</td>
+        <td>{{ profession.image }}</td>
+        <td>
+          <a href="/admin/updateprofession/{{ profession.id }}">Update</a>
+          <a href="/admin/deleteprofession/{{ profession.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<h3>Skills</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Profession_ID</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for skill in skills %}
+      <tr>
+        <td>{{ skill.name }}</td>
+        <td>{{ skill.profession_id }}</td>
+        <td>
+          <a href="/admin/updateskill/{{ skill.id }}">Update</a>
+          <a href="/admin/deleteskill/{{ skill.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update About</h3>
+<form method="POST">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" name="title" value="{{ about.title }}">
+    </div>
+    <div class="form-group">
+        <label for="content">Content</label>
+        <textarea class="form-control" id="content" name="content" rows="3">{{ about.content }}</textarea>
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

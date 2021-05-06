@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/app/css/style.css">
+  <link rel="stylesheet" href="static/app/css/portfolio.css">
+  <link rel="stylesheet" href="static/app/css/design-project.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title></title>
+</head>
+  <body onresize="openedMenuSize()">
+    <section id="top" class="header">
+      <div class="logo">
+        <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+      </div>
+      <div class="navbar-and-icon">
+        <div class="highlighter"></div>
+        <div class="navbar">
+          <ul>
+            <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+            <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+            <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+            <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="icon">
+          <div class="corner-icon">
+            <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="41" height="1"></rect>
+              <rect y="19" width="41" height="1"></rect>
+              <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+            </svg>
+          </div>
+          <div class="hamburger-menu" onclick="openCloseMenu()">
+            <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="21" height="1"></rect>
+              <rect x="20" y="19" width="21" height="1"></rect>
+              <rect y="10" width="41" height="1"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="opened-menu">
+      <ul>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="index.html">Home</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="portfolio.html">Portfolio</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="about.html">About</a></li>
+        <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <section id="top" class="scroll header">
+      <div class="logo">
+        <a href="index.html"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+      </div>
+      <div class="navbar-and-icon">
+        <div class="highlighter"></div>
+        <div class="navbar">
+          <ul>
+            <li onmouseover="highlight(0)"><a href="index.html">Home</a></li>
+            <li onmouseover="highlight(1)"><a href="portfolio.html">Portfolio</a></li>
+            <li onmouseover="highlight(2)"><a href="about.html">About</a></li>
+            <li onmouseover="highlight(3)"><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="icon">
+          <div class="corner-icon">
+            <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="41" height="1"></rect>
+              <rect y="19" width="41" height="1"></rect>
+              <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+            </svg>
+          </div>
+          <div class="hamburger-menu" onclick="openCloseMenu()">
+            <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+              <rect width="21" height="1"></rect>
+              <rect x="20" y="19" width="21" height="1"></rect>
+              <rect y="10" width="41" height="1"></rect>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="back-to-top">
+      back to top +
+    </div>
+
+    <div class="next-previous next-project">
+      NEXT PROJECT
+    </div>
+    <div class="next-previous previous-project">
+      PREVIOUS PROJECT
+    </div>
+
+    <section class="project-page-inside">
+      <div class="left-line"></div>
+      <div class="right-line"></div>
+      <div class="main-project">
+        <div class="main-project-inside">
+          <div class="loc-bar">
+            <h6>Home / Design /<span> Exhibition Identity</span></h6>
+          </div>
+          <div class="imgs">
+            <div class="img">
+              <img src="img/design-project01.jpeg" alt="" onclick="showImg(1)">
+            </div>
+            <div class="img">
+              <img src="img/design-project02.jpeg" alt="" onclick="showImg(2)">
+            </div>
+            <div class="img">
+              <img src="img/design-project03.jpeg" alt="" onclick="showImg(3)">
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="text-info">
+              <h3>Project Name</h3>
+              <p>Lorem ipsum dolor sit amet, ad debet voluptatum vis, id vivendo placerat temporibus mel. Legere molestiae moderatius te nam, nec dolore invidunt definitiones ea. Ridens noster tacimates pri ea. Dolores atomorum signiferumque mea id, sit blandit consequuntur ad. Mutat aliquam pri ea, pro cu altera oblique, congue pertinacia ius ea. Munere corrumpit his at, vim et constituto voluptatibus  scaevola.</p>
+            </div>
+            <div class="tags-info">
+              <h6>Category: <span>Design</span></h6>
+              <h6>Date: <span>January 18, 2019</span></h6>
+              <h6>Tags: <span> Art Illustration</span></h6>
+              <div class="sm-icons">
+                <a href="https://www.behance.net/resulzade9ca45" target="_blank"><i class="fab fa-behance"></i></a>
+                <a href="https://www.facebook.com/kenan.resulzade.146" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/kenan_resulzadeh/" target="_blank"><i class="fab fa-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="related-projects">
+        <div class="related-projects-inside">
+          <h5>Related Projects</h5>
+          <div class="related-projects-items">
+            <a href="design-project.html">
+              <div class="related-projects-item port-item">
+                <img src="img/team-1.jpg" alt="">
+                <div class="overlay">
+                  <div class="text">
+                    <h1>Art / Subjects</h1>
+                    <h2>Art Vision Vol.1</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="design-project.html">
+              <div class="related-projects-item port-item">
+                <img src="img/team-1.jpg" alt="">
+                <div class="overlay">
+                  <div class="text">
+                    <h1>Art / Subjects</h1>
+                    <h2>Art Vision Vol.1</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="design-project.html">
+              <div class="related-projects-item port-item">
+                <img src="img/team-1.jpg" alt="">
+                <div class="overlay">
+                  <div class="text">
+                    <h1>Art / Subjects</h1>
+                    <h2>Art Vision Vol.1</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="design-project.html">
+              <div class="related-projects-item port-item">
+                <img src="img/team-1.jpg" alt="">
+                <div class="overlay">
+                  <div class="text">
+                    <h1>Design</h1>
+                    <h2>Editorial Illustrstions</h2>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="portfolio-icon">
+            <a href="portfolio.html"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="17px" height="17px" viewBox="0 0 17 17" style="enable-background:new 0 0 17 17;" xml:space="preserve"><style type="text/css">.st0{fill:#231F20;}</style><g><rect x="9" class="st0" width="8" height="8"></rect><rect class="st0" width="8" height="8"></rect><rect x="9" y="9" class="st0" width="8" height="8"></rect><rect y="9" class="st0" width="8" height="8"></rect></g></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="background" onclick="hideBackground(event)">
+      <div class="slider">
+        <i id="expand-icon" class="fas fa-expand"></i>
+        <div class="slide" onmouseover="showBtns()" onmouseout="hideBtns()">
+          <img src="img/design-project01.jpeg" alt="">
+          <div class="arrows">
+            <button id="leftBtn" onclick="changeBefore()">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="rightBtn" onclick="changeNext()">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+        <div class="slide-bottom">
+
+          <p id="page-info"><span> 1 </span> / <span> 3 </span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer start -->
+    <section class="footer">
+        <div class="logo-contact1">
+          <div class="logo-section">
+            <div class="logo-and-motto">
+              <img src="img/footer-logo.png" alt="Brand Logo" title="Brand Logo">
+              <span class="mulish-1">Set your creativity free. UltraViolette</span>
+            </div>
+          </div>
+          <div class="contact1-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Contact</h4>
+                <i class="fas fa-location-arrow"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">www.ultraviolette.com</li>
+                  <li class="mulish-1">ultraviolette@qode.com</li>
+                  <li class="mulish-1">Phone: 0035 265 244 58</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="visit-contact2">
+          <div class="visit-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Visit</h4>
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">24 Harlem street</li>
+                  <li class="mulish-1">6 th Floor</li>
+                  <li class="mulish-1">Amsterdam</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="contact2-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Contact</h4>
+                <i class="fas fa-share-alt"></i>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1">Twitter</li>
+                  <li class="mulish-1">Facebook</li>
+                  <li class="mulish-1">Instagram</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- Footer end -->
+
+    <div class="copyright-section">
+      <span class="mulish-1">&copy 2019 Qode Interactive, All Rights Reserved</span>
+    </div>
+
+    <script src="static/app/javascript/app.js"></script>
+  </body>
+</html>

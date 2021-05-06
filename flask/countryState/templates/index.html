@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/">
+    <div class="row">
+        <div class="col-md-5 mb-3">
+          <label for="country">Country</label>
+          <select class="custom-select d-block w-100" id="country" name="country_id" required="">
+                {% for country in countries %}
+                    <option value="{{country.id}}">{{country.name}}</option>
+                {% endfor %}
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid country.
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="state">State</label>
+          <select class="custom-select d-block w-100" id="state" required="">
+                {% for state in states %}
+                    <option value="{{state.id}}">{{state.name}}</option>
+                {% endfor %}
+          </select>
+          <div class="invalid-feedback">
+            Please provide a valid state.
+          </div>
+        </div>
+      </div>
+</form> 
+{% endblock %}

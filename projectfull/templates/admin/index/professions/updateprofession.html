@@ -1,0 +1,19 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update profession</h3>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="profession_name">Update name</label>
+      <input type="text" class="form-control" id="profession_name" name="profession_name" value="{{ profession.name }}">
+    </div>
+    <div class="form-group">
+      <label for="short_desc">Update description</label>
+      <textarea class="form-control" id="short_desc" name="short_desc" rows="3">{{ profession.description }}</textarea>
+    </div>
+    <div class="form-group">
+      <label for="image">Choose an image</label>
+      <input type="file" class="form-control" id="image" name="img" value="profession.image">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

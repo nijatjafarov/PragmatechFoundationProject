@@ -1,0 +1,19 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Add Employer</h3>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="fullname">Employer fullname</label>
+      <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter employer's fullname">
+    </div>
+    <div class="form-group">
+        <label for="profession">Employer profession</label>
+        <input type="text" class="form-control" id="profession" name="profession" placeholder="Enter employer's profession">
+      </div>
+    <div class="form-group">
+      <label for="image">Choose an image</label>
+      <input type="file" class="form-control" id="image" name="img">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Add</button>
+</form>
+{% endblock %}
