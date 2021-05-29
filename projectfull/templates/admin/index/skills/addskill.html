@@ -1,6 +1,7 @@
 {% extends "admin/layout.html" %}
 {% block content %}
 <form method="POST">
+    {{ form.hidden_tag() }}
     <div class="form-group">
         <label for="profession">Profession</label>
         <select class="form-control" id="profession" name="profession">
@@ -9,10 +10,19 @@
             {% endfor %}
         </select>
       </div>
-    <div class="form-group">
-      <label for="skill">Add Skill</label>
-      <input type="text" class="form-control" id="skill" name="skill" placeholder="Enter skill">
-    </div>
+      <div class="form-group">
+        {{ form.skill.label }}
+        {% if form.skill.errors %}
+          {{ form.skill(class="form-control form-control-lg is-invalid", placeholder="Enter the skill")}}
+          <div class="invalid-feedback">
+            {% for error in form.skill.errors %}
+                <span>{{ error }}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+          {{ form.skill(class="form-control form-control-lg", placeholder="Enter the skill")}}
+        {% endif %}
+      </div>
     <button type="submit" class="btn btn-primary mb-2">Add</button>
 </form>
 {% endblock %}

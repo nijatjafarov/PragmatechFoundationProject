@@ -2,18 +2,42 @@
 {% block content %}
 <h3>Update profession</h3>
 <form method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="profession_name">Update name</label>
-      <input type="text" class="form-control" id="profession_name" name="profession_name" value="{{ profession.name }}">
+    {{ form.hidden_tag() }}
+  <div class="form-group">
+    <label for="name">Update name</label>
+    {% if form.name.errors %}
+      {{ form.name(class="form-control form-control-lg is-invalid", placeholder="Enter the name", value=profession.name)}}
+      <div class="invalid-feedback">
+        {% for error in form.name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </div>
-    <div class="form-group">
-      <label for="short_desc">Update description</label>
-      <textarea class="form-control" id="short_desc" name="short_desc" rows="3">{{ profession.description }}</textarea>
-    </div>
-    <div class="form-group">
-      <label for="image">Choose an image</label>
-      <input type="file" class="form-control" id="image" name="img" value="profession.image">
-    </div>
+    {% else %}
+      {{ form.name(class="form-control form-control-lg", placeholder="Enter the name", value=profession.name)}}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="description">Update description</label>
+    {% if form.description.errors %}
+    {{ form.description(class="form-control form-control-lg", placeholder="Enter the description", value=profession.description) }}
+      <div class="invalid-feedback">
+        {% for error in form.description.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% else %}
+    {{ form.description(class="form-control form-control-lg", placeholder="Enter the description", value=profession.description) }}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.img.label() }}
+    {{ form.img(class="form-control-file") }}
+    {% if form.img.errors %}
+        {% for error in form.img.errors %}
+            <span class="text-danger">{{ error }}</span><br>
+        {% endfor %}
+    {% endif %}
+  </div>
     <button type="submit" class="btn btn-primary mb-2">Update</button>
 </form>
 {% endblock %}

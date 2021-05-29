@@ -1,0 +1,42 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Add Contact</h3>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.name.label }}
+    {% if form.name.errors %}
+      {{ form.name(class="form-control form-control-lg is-invalid", placeholder="Enter the name")}}
+      <div class="invalid-feedback">
+        {% for error in form.name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+      {{ form.name(class="form-control form-control-lg", placeholder="Enter the name")}}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.value.label() }}
+    {% if form.value.errors %}
+      {{ form.value(class="form-control form-control-lg is-invalid", placeholder="Enter the value")}}
+      {% for error in form.value.errors %}
+        <div class="invalid-feedback">
+          <span>{{ error }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      {{ form.value(class="form-control form-control-lg", placeholder="Enter the value") }}
+    {% endif %}
+  </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="show_on_footer" name="show_on_footer">
+      <label class="custom-control-label" for="show_on_footer">Show on Footer</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_contact" name="show_on_contact">
+        <label class="custom-control-label" for="show_on_contact">Show on Contact Page</label>
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Add</button>
+</form>
+{% endblock %}

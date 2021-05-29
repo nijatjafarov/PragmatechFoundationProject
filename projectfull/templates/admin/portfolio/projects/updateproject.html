@@ -1,0 +1,58 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update Project</h3>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+    <div class="form-group">
+      <label for="name">Update name</label>
+      {% if form.name.errors %}
+        {{ form.name(class="form-control form-control-lg is-invalid", placeholder = "Change the name", value=project.name)}}
+        
+          <div class="invalid-feedback">
+            {% for error in form.name.errors %}
+            <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        
+      {% else %}
+          {{ form.name(class="form-control form-contorl-lg", placeholder = "Change the name", value=project.name) }}
+      {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="content">Update description</label>
+        <textarea class="form-control" id="content" name="content" rows="3" placeholder="Change the content">{{ project.content }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="profession">Update category</label>
+        <select class="form-control" id="profession" name="profession">
+          {% if selected_profession == "None" %}
+            <option selected>None</option>
+          {% else %}
+            <option>None</option>
+          {% endif %}
+          
+          {% for profession in professions %}
+            {% if profession == selected_profession %}
+            <option value="{{ profession.id }}" selected>{{ selected_profession.name }}</option>
+            {% else %}
+            <option value="{{ profession.id }}" >{{ profession.name }}</option>
+            {% endif %}
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        {{ form.img.label() }}
+        {{ form.img(class="form-control-file") }}
+        {% if form.img.errors %}
+            {% for error in form.img.errors %}
+                <span class="text-danger">{{ error }}</span><br>
+            {% endfor %}
+        {% endif %}
+      </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="show_on_home" name="show_on_home" {{ "checked='checked'" if project.show_on_home }}>
+      <label class="custom-control-label" for="show_on_home">Show this project on Work section on Home Page</label>
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

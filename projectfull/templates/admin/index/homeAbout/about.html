@@ -2,14 +2,34 @@
 {% block content %}
 <h3>Update About</h3>
 <form method="POST">
+  {{ form.hidden_tag() }}
     <div class="form-group">
-      <label for="title">Title</label>
-      <input type="text" class="form-control" id="title" name="title" value="{{ about.title }}">
+      {{ form.title.label(class="form-control-label")}}
+      {% if form.title.errors %}
+        {{ form.title(class="form-control form-control-lg is-invalid", value=about.title, placeholder="Enter the title") }}
+        <div class="invalid-feedback">
+        {% for error in form.title.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+        </div>
+      {% else %}
+        {{ form.title(class="form-control form-control-lg", value=about.title, placeholder="Enter the title") }}
+      {% endif %}
     </div>
+
     <div class="form-group">
-        <label for="content">Content</label>
-        <textarea class="form-control" id="content" name="content" rows="3">{{ about.content }}</textarea>
-      </div>
+      {{ form.content.label(class="form-control-label")}}
+      {% if form.content.errors %}
+        {{ form.content(class="form-control form-control-lg is-invalid", placeholder="Enter the content") }}
+        <div class="invalid-feedback">
+        {% for error in form.content.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+        </div>
+      {% else %}
+        {{ form.content(class="form-control form-control-lg", placeholder="Enter the content") }}
+      {% endif %}
+    </div>
     <button type="submit" class="btn btn-primary mb-2">Update</button>
 </form>
 {% endblock %}

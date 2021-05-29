@@ -3,8 +3,15 @@
 <h3>Update Slide</h3>
 <form method="POST" enctype="multipart/form-data">
 <div class="form-group">
-    <label for="image">Choose an image</label>
-    <input type="file" class="form-control" id="image" name="img" value="slide.image">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.img.label() }}
+    {{ form.img(class="form-control-file") }}
+    {% if form.img.errors %}
+        {% for error in form.img.errors %}
+            <span class="text-danger">{{ error }}</span><br>
+        {% endfor %}
+    {% endif %}
   </div>
   <button type="submit" class="btn btn-primary mb-2">Update</button>
 </form>

@@ -1,0 +1,35 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Add Social Media Account</h3>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name">Add name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+        <label for="link">Add link</label>
+        <input type="text" class="form-control" id="link" name="link" placeholder="Enter link">
+      </div>
+    <div class="form-group">
+        <label for="icon_url">Add icon class(es)</label>
+        <input type="text" class="form-control" id="icon_url" name="icon_url" placeholder="Enter icon URL">
+      </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="show_on_home" name="show_on_home">
+      <label class="custom-control-label" for="show_on_home">Show on Home Sidebar</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_footer" name="show_on_footer">
+        <label class="custom-control-label" for="show_on_footer">Show on Footer</label>
+      </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_project" name="show_on_project">
+        <label class="custom-control-label" for="show_on_project">Show on Projects</label>
+      </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_about" name="show_on_about">
+        <label class="custom-control-label" for="show_on_about">Show on About page</label>
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Add</button>
+</form>
+{% endblock %}

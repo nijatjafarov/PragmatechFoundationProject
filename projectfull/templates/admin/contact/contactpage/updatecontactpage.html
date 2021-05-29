@@ -1,0 +1,43 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update Contact Page</h3>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+    <div class="form-group">
+      {{ form.title1.label(class="form-control-label")}}
+      {% if form.title1.errors %}
+        {{ form.title1(class="form-control form-control-lg is-invalid", value=contact_page.title1, placeholder="Change the first title") }}
+        <div class="invalid-feedback">
+        {% for error in form.title1.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+        </div>
+      {% else %}
+        {{ form.title1(class="form-control form-control-lg", value=contact_page.title1, placeholder="Change the first title") }}
+      {% endif %}
+    </div>
+    <div class="form-group">
+      {{ form.title1.label(class="form-control-label")}}
+      {% if form.title2.errors %}
+        {{ form.title2(class="form-control form-control-lg is-invalid", value=contact_page.title2, placeholder="Change the second title") }}
+        <div class="invalid-feedback">
+        {% for error in form.title2.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+        </div>
+      {% else %}
+        {{ form.title2(class="form-control form-control-lg", value=contact_page.title2, placeholder="Change the second title") }}
+      {% endif %}
+    </div>
+    <div class="form-group">
+      {{ form.img.label() }}
+      {{ form.img(class="form-control-file") }}
+      {% if form.img.errors %}
+          {% for error in form.img.errors %}
+              <span class="text-danger">{{ error }}</span><br>
+          {% endfor %}
+      {% endif %}
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

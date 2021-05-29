@@ -1,0 +1,42 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update Contact</h3>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    <label for="name">Update name</label>
+    {% if form.name.errors %}
+      {{ form.name(class="form-control form-control-lg is-invalid", placeholder="Change the name", value=contact.name)}}
+      <div class="invalid-feedback">
+        {% for error in form.name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+      {{ form.name(class="form-control form-control-lg", placeholder="Change the name", value=contact.name)}}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    <label for="value">Update value</label>
+    {% if form.value.errors %}
+      {{ form.value(class="form-control form-control-lg is-invalid", placeholder="Change the value", value=contact.value)}}
+      {% for error in form.value.errors %}
+        <div class="invalid-feedback">
+          <span>{{ error }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+      {{ form.value(class="form-control form-control-lg", placeholder="Change the value", value=contact.value) }}
+    {% endif %}
+  </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="show_on_footer" name="show_on_footer" {{ "checked='checked'" if contact.show_on_footer }}>
+      <label class="custom-control-label" for="show_on_footer">Show on Footer</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_contact" name="show_on_contact" {{ "checked='checked'" if contact.show_on_contact }}>
+        <label class="custom-control-label" for="show_on_contact">Show on Contact Page</label>
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

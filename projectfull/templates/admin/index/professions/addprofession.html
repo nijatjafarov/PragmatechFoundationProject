@@ -2,18 +2,42 @@
 {% block content %}
 <h3>Add Profession</h3>
 <form method="POST" enctype="multipart/form-data">
-    <div class="form-group">
-      <label for="profession_name">Add profession name</label>
-      <input type="text" class="form-control" id="profession_name" name="profession_name" placeholder="Enter profession name">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    {{ form.name.label }}
+    {% if form.name.errors %}
+      {{ form.name(class="form-control form-control-lg is-invalid", placeholder="Enter the name")}}
+      <div class="invalid-feedback">
+        {% for error in form.name.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </div>
-    <div class="form-group">
-      <label for="short_desc">Profession short description</label>
-      <textarea class="form-control" id="short_desc" name="short_desc" rows="3"></textarea>
+    {% else %}
+      {{ form.name(class="form-control form-control-lg", placeholder="Enter the name")}}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.description.label }}
+    {% if form.description.errors %}
+      {{ form.description(class="form-control form-control-lg is-invalid")}}
+      <div class="invalid-feedback">
+        {% for error in form.description.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
     </div>
-    <div class="form-group">
-      <label for="image">Choose an image</label>
-      <input type="file" class="form-control" id="image" name="img">
-    </div>
-    <button type="submit" class="btn btn-primary mb-2">Add</button>
+    {% else %}
+      {{ form.description(class="form-control form-control-lg")}}
+    {% endif %}
+  </div>
+  <div class="form-group">
+    {{ form.img.label() }}
+    {{ form.img(class="form-control-file") }}
+    {% if form.img.errors %}
+        {% for error in form.img.errors %}
+            <span class="text-danger">{{ error }}</span><br>
+        {% endfor %}
+    {% endif %}
+  </div>
+  <button type="submit" class="btn btn-primary mb-2">Add</button>
 </form>
 {% endblock %}

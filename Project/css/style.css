@@ -241,6 +241,7 @@ body {
 
 .sm-sidebar a {
   color: #050505;
+  font: inherit;
 }
 
 .sm-sidebar i {
@@ -344,9 +345,24 @@ body {
 .work-square {
   width: 51%;
   padding: 10px;
-  border: 1px solid black;
   margin: 0 auto;
   position: relative;
+}
+
+
+.work-square::before {
+  border-top-color: transparent;
+  border-right-color: transparent;
+  top: 0;
+  left: 0;
+  transition: border-color .4s,height 0s ease-out .4s,width 0s ease-out .4s;
+  content: '';
+  position: absolute;
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  border: 1px solid transparent;
+  width: 0;
+  height: 0;
 }
 
 .work-square img {
@@ -627,6 +643,7 @@ body {
 
 .logo-section {
   width: 54%;
+  min-height: 204px;
 }
 
 .contact2-section {
@@ -637,9 +654,11 @@ body {
 .contact1-section, .visit-section {
   width: 46%;
   border-left: 1px solid #2d2d2d;
+  min-height: 204px;
 }
 
 .logo-section, .contact1-section,  .contact2-section, .visit-section {
+  position: relative;
   display: flex;
   align-items: center;
 }
@@ -648,6 +667,8 @@ body {
   display: inline-block;
   margin: 20px 0px;
   width: 65%;
+  position: absolute;
+  top: 0;
 }
 
 .section-items ul {

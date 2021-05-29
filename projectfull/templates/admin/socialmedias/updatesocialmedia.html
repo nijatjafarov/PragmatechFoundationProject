@@ -1,0 +1,35 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3>Update Social Media Account</h3>
+<form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+      <label for="name">Update name</label>
+      <input type="text" class="form-control" id="name" name="name" value="{{ social_media.name }}">
+    </div>
+    <div class="form-group">
+        <label for="link">Update link</label>
+        <input type="text" class="form-control" id="link" name="link" value="{{ social_media.link }}">
+      </div>
+    <div class="form-group">
+        <label for="icon_url">Update icon class(es)</label>
+        <input type="text" class="form-control" id="icon_url" name="icon_url" value="{{ social_media.icon_url }}">
+      </div>
+    <div class="custom-control custom-checkbox">
+      <input type="checkbox" class="custom-control-input" id="show_on_home" name="show_on_home" {{ "checked='checked'" if social_media.show_on_home }}>
+      <label class="custom-control-label" for="show_on_home">Show on Home Sidebar</label>
+    </div>
+    <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_footer" name="show_on_footer" {{ "checked='checked'" if social_media.show_on_footer }}>
+        <label class="custom-control-label" for="show_on_footer">Show on Footer</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_project" name="show_on_project" {{ "checked='checked'" if social_media.show_on_project }}>
+        <label class="custom-control-label" for="show_on_project">Show on Projects</label>
+      </div>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" id="show_on_about" name="show_on_about" {{ "checked='checked'" if social_media.show_on_about }}>
+        <label class="custom-control-label" for="show_on_about">Show on About page</label>
+      </div>
+    <button type="submit" class="btn btn-primary mb-2">Update</button>
+</form>
+{% endblock %}

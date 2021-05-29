@@ -29,7 +29,6 @@
 // }
 
 //design-project sehifesi uzerinden islemisem
-console.log("salam")
 var header = document.querySelector(".header")
 var navbar = document.querySelector(".navbar");
 var navbarSections = navbar.getElementsByTagName("li");
@@ -42,8 +41,16 @@ var openedMenu = document.querySelector(".opened-menu");
 var open = false;
 
 openedMenu.style.width = document.body.offsetWidth-100 + "px";
+
+window.addEventListener('resize', openedMenuSize, false);
+
 function openedMenuSize() {
   openedMenu.style.width = document.body.offsetWidth-100 + "px";
+  for(var i = 0; i < sliders.length; i++) {
+    sliders[i].style.height = sliders[i].offsetWidth * 0.6337 + "px";
+    sliders[i].children[1].style.height = (sliders[i].offsetHeight - 60) + "px";
+    arrows[i].style.width = sliders[i].offsetWidth + "px";
+  }
 }
 
 function highlight(num) {
@@ -139,12 +146,12 @@ function scroll() {
 
 
 var background = document.querySelector(".background");
-var slider = document.querySelector(".slider");
-var arrows = document.querySelector(".arrows");
+var sliders = document.querySelectorAll(".slider");
+var arrows = document.querySelectorAll(".arrows");
 var slide = document.querySelector(".slide");
 var imgs = document.querySelectorAll(".img");
 var pageInfo = document.querySelector("#page-info");
-var expandIcon = document.querySelector("#expand-icon");
+var expandIcons = document.querySelectorAll("#expand-icon");
 var currentSlide;
 
 background.style.height = document.body.offsetHeight + 'px';
@@ -152,61 +159,81 @@ function hideBackground(event) {
   if (event.target == background) {
     background.style.opacity = "0";
     background.style.display = "none";
-    slider.style.width = "950px";
-    arrows.style.width = "950px";
+    for(var i = 0; i < sliders.length; i++) {
+      sliders[i].style.height = "602px";
+      sliders[i].style.width = "939px";
+      sliders[i].children[1].style.height = "542px";
+      arrows[i].style.width = "939px";
+    }
   }
 }
 
 function showImg(index) {
-  currentSlide = index;
-  pageInfo.children[0].innerHTML = currentSlide;
-  slide.firstElementChild.setAttribute("src", `img/design-project0${currentSlide}.jpeg`);
+  currentSlide = Number(index);
   background.style.display = "block";
+  for(var i = 0; i < sliders.length; i++) {
+    sliders[i].style.display = "none";
+  }
+  sliders[currentSlide].style.display = "block";
   setTimeout(function(){
     background.style.opacity = "1";
+    sliders[currentSlide].style.opacity = "1"
   }, 100);
 }
 
 function showBtns() {
-  arrows.style.opacity = "1";
+  arrows[currentSlide].style.opacity = "1";
 }
 
 function hideBtns() {
-  arrows.style.opacity = "0";
+  arrows[currentSlide].style.opacity = "0";
 }
 
 function changeNext() {
-  if (currentSlide == imgs.length) {
-    currentSlide = 1;
+  if (currentSlide == imgs.length-1) {
+    currentSlide = 0;
   }else {
     currentSlide += 1;
   }
-  slider.style.opacity = "0";
+  for(var i = 0; i < sliders.length; i++) {
+    sliders[i].style.opacity = "0";
+  }
+  sliders[currentSlide].style.display = "block";
   setTimeout(function(){
-    slider.style.opacity = "1";
-    pageInfo.children[0].innerHTML = currentSlide;
-    slide.firstElementChild.setAttribute("src", `img/design-project0${currentSlide}.jpeg`);
+    sliders[currentSlide].style.opacity = "1";
    }, 600);
 }
 
 function changeBefore() {
-  if (currentSlide == 1) {
-    currentSlide = imgs.length;
+  if (currentSlide == 0) {
+    currentSlide = imgs.length-1;
   }else {
     currentSlide -= 1;
   }
-  slider.style.opacity = "0";
-
+  for(var i = 0; i < sliders.length; i++) {
+    sliders[i].style.opacity = "0";
+  }
+  sliders[currentSlide].style.display = "block";
   setTimeout(function(){
-    slider.style.opacity = "1";
-    pageInfo.children[0].innerHTML = currentSlide;
-    slide.firstElementChild.setAttribute("src", `img/design-project0${currentSlide}.jpeg`);
-  }, 600);
+    sliders[currentSlide].style.opacity = "1";
+   }, 600);
 }
 
-pageInfo.children[1].innerHTML = imgs.length;
+// for(var i = 0; i < expandIcons.length; i++) {
+// expandIcons[i].addEventListener("click", function() {
+//   for(var i = 0; i < sliders.length; i++) {
+//   sliders[i].style.width = "1200px";
+//   arrows[i].style.width = "1200px";
+//   }
+// })
+// }
 
-expandIcon.addEventListener("click", function() {
-  slider.style.width = "1200px";
-  arrows.style.width = "1200px";
-})
+function expand() {
+  for(var i = 0; i < sliders.length; i++) {
+    sliders[i].style.height = "810px";
+    sliders[i].style.width = "1300px";
+    sliders[i].children[1].style.height = "750px";
+    arrows[i].style.width = "1300px";
+  }
+  sliders[currentSlide].style.opacity = "1";
+}

@@ -10,6 +10,7 @@ var openedMenu = document.querySelector(".opened-menu");
 var backToTop = document.querySelector(".back-to-top");
 var about = document.querySelector(".about");
 var firstScreen = document.querySelector(".first-screen");
+var slide_imgs = firstScreen.getElementsByTagName("img");
 var restOfPage = document.querySelector(".rest-of-page");
 var smSideBar = document.querySelector(".sm-sidebar")
 var open = false;
@@ -17,29 +18,43 @@ var currentImg = 0;
 
 firstScreen.style.height = window.innerHeight - 105 + "px";
 
+if(slide_imgs.length < 2) {
+  document.querySelector(".corner-buttons").style.display = none;
+}
+
+for(var i = 0; i < slide_imgs.length; i++) {
+  slide_imgs[i].style.zIndex -= i;
+  slide_imgs[i].style.opacity = "0";
+}
+slide_imgs[0].style.opacity = "1";
+
 function changeNext(){
-  if(currentImg == 2) {
+  for(var i = 0; i < slide_imgs.length; i++) {
+    slide_imgs[i].style.opacity = "0";
+  };
+  if(currentImg == slide_imgs.length-1) {
     currentImg = 0;
   } else {
     currentImg += 1;
   }
-  firstScreen.firstElementChild.style.opacity = "0";
   setTimeout(function(){
-    firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
-    firstScreen.firstElementChild.style.opacity = "1";
+    //firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
+    slide_imgs[currentImg].style.opacity = "1";
   }, 800);
 }
 
 function changePrev(){
   if(currentImg == 0) {
-    currentImg = 2;
+    currentImg = slide_imgs.length-1;
   } else {
     currentImg -= 1;
   }
-  firstScreen.firstElementChild.style.opacity = "0";
+  for(var i = 0; i < slide_imgs.length; i++) {
+    slide_imgs[i].style.opacity = "0";
+  };
   setTimeout(function(){
-    firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
-    firstScreen.firstElementChild.style.opacity = "1";
+    //firstScreen.firstElementChild.setAttribute("src", `img/first0${currentImg+1}.jpeg`);
+    slide_imgs[currentImg].style.opacity = "1";
   }, 800);
 }
 
@@ -53,6 +68,8 @@ for( var i = 0; i < workSquares.length; i++) {
 }
 
 openedMenu.style.width = document.body.offsetWidth-100 + "px";
+
+window.addEventListener('resize', dynamicSizes, false);
 
 function dynamicSizes() {
   openedMenu.style.width = document.body.offsetWidth-100 + "px";
@@ -85,7 +102,7 @@ function openCloseMenu() {
     header.style.borderBottom = "1px solid #ebebeb";
     open = false;
   } else {
-    openedMenu.style.height = "auto";
+    openedMenu.style.height = "193px";
     openedMenu.style.borderBottom = "1px solid #ebebeb";
     header.style.border = "none";
     open = true;
@@ -100,9 +117,9 @@ function normalMenuItem(listItem) {
   listItem.firstElementChild.style.color = "black";
 }
 
-window.onscroll = function() {scroll()};
 
-function scroll() {
+var a = 0;
+$(window).scroll(function() {
   if (document.documentElement.scrollTop > 114) {
     if (openedMenu.offsetHeight != 0) {
       scrollHeader.style.top = "0px";
@@ -111,6 +128,8 @@ function scroll() {
       scrollHeader.style.transition = "none";
       openedMenu.style.position = "fixed";
       openedMenu.style.top = "104px";
+    } else {
+      scrollHeader.style.borderBottom = "1px solid #ebebeb";
     }
   } else {
     scrollHeader.style.top = "-15px";
@@ -137,23 +156,88 @@ function scroll() {
   } else {
     smSideBar.style.display = "none";
   }
-}
+  var oTop = $('#info').offset().top - window.innerHeight;
+  if (a == 0 && $(window).scrollTop() > oTop) {
+    $('.animated-value').each(function() {
+      var $this = $(this),
+        countTo = $this.attr('data-count');
+      $({
+        countNum: $this.text()
+      }).animate({
+          countNum: countTo
+        },
 
+        {
+
+          duration: 1000,
+          easing: 'swing',
+          step: function() {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function() {
+            $this.text(this.countNum);
+            //alert('finished');
+          }
+
+        });
+    });
+    a = 1;
+  }
+});
+
+
+//Back to Top ucun ogurluq kod. Canim ucun jQuery bilmemekdendir
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $(".back-to-top").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: 0
+      }, 100, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
 
 var lists = document.querySelectorAll(".career-list");
 var careerBtns = document.querySelectorAll(".career-button");
-var ul = document.getElementsByTagName("ul")
 
-lists[0].style.height = 'auto';
+if (careerBtns.length == 1) {
+  careerBtns[0].style.display = "none";
+  careerBtns[0].parentElement.style.cursor = "auto"
+}
+
+listHeights = []
+
+for (var i = 0; i < lists.length; i++) {
+  listHeights.push(lists[i].offsetHeight + "px");
+  lists[i].style.height = "0px";
+}
+
+lists[0].style.height = listHeights[0];
 lists[0].style.margin = '40px 0px';
 careerBtns[0].innerHTML = "-";
 
-function controlList(elem) {
+if (careerBtns.length != 1) {
+  function controlList(elem) {
     var thisList = elem.nextElementSibling;
     if (thisList.offsetHeight == 0) {
         for (var i = 0; i < lists.length; i++) {
           if (lists[i] == thisList) {
-            thisList.style.height = 'auto';
+            thisList.style.height = listHeights[i];
             thisList.style.margin = '40px 0px';
             elem.children[1].innerHTML = "-";
           } else {
@@ -167,6 +251,7 @@ function controlList(elem) {
         thisList.style.margin = 0;
         elem.children[1].innerHTML = "+";
     }
+}
 }
 
 function getColoredItself(img) {

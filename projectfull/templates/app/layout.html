@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/app/css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    {% block links %}{% endblock %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    {% block title %}{% endblock %}
+  </head>
+  <body>
+    <section class="total-first-screen">
+      <!-- Header start -->
+      <section id="top" class="header">
+        <div class="logo">
+          <a href="{{ url_for('index') }}"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+        </div>
+        <div class="navbar-and-icon">
+          <div class="highlighter"></div>
+          <div class="navbar">
+            <ul>
+              <li onmouseover="highlight(0)"><a href="{{ url_for('index') }}">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="{{ url_for('app_portfolio') }}">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="{{ url_for('app_about') }}">About</a></li>
+              <li onmouseover="highlight(3)"><a href="{{ url_for('app_contact') }}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="icon">
+            <div class="corner-icon">
+              <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="41" height="1"></rect>
+                <rect y="19" width="41" height="1"></rect>
+                <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              </svg>
+            </div>
+            <div class="hamburger-menu" onclick="openCloseMenu()">
+              <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="21" height="1"></rect>
+                <rect x="20" y="19" width="21" height="1"></rect>
+                <rect y="10" width="41" height="1"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="opened-menu">
+        <ul>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="{{ url_for('index') }}">Home</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="{{ url_for('app_portfolio') }}">Portfolio</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="{{ url_for('app_about') }}">About</a></li>
+          <li onmouseover="hoverMenuItem(this)" onmouseout="normalMenuItem(this)"><a href="{{ url_for('app_contact') }}">Contact</a></li>
+        </ul>
+      </div>
+
+      <section id="top" class="scroll header">
+        <div class="logo">
+          <a href="{{ url_for('index') }}"><img src="img/LOGO-V2A.png" alt="Brand Logo" title="Brand Logo"></a>
+        </div>
+        <div class="navbar-and-icon">
+          <div class="highlighter"></div>
+          <div class="navbar">
+            <ul>
+              <li onmouseover="highlight(0)"><a href="{{ url_for('index') }}">Home</a></li>
+              <li onmouseover="highlight(1)"><a href="{{ url_for('app_portfolio') }}">Portfolio</a></li>
+              <li onmouseover="highlight(2)"><a href="{{ url_for('app_about') }}">About</a></li>
+              <li onmouseover="highlight(3)"><a href="{{ url_for('app_contact') }}">Contact</a></li>
+            </ul>
+          </div>
+          <div class="icon">
+            <div class="corner-icon">
+              <svg class="corner-button" version="1.1" x="0px" y="0px" width="41px" height="20px" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="41" height="1"></rect>
+                <rect y="19" width="41" height="1"></rect>
+                <rect x="23.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="23.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="#000" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+                <rect x="0.5" y="3.5" fill="none" stroke="#000000" stroke-miterlimit="10" width="17" height="13"></rect>
+              </svg>
+            </div>
+            <div class="hamburger-menu" onclick="openCloseMenu()">
+              <svg x="0px" y="0px" width="41px" height="20px" shape-rendering="crispEdges" viewBox="0 0 41 20" enable-background="new 0 0 41 20" xml:space="preserve">
+                <rect width="21" height="1"></rect>
+                <rect x="20" y="19" width="21" height="1"></rect>
+                <rect y="10" width="41" height="1"></rect>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {% block content %}{% endblock %}
+
+       <!-- Footer start -->
+    {% block footer %}
+    <section class="footer">
+        <div class="logo-contact1">
+          <div class="logo-section">
+            <div class="logo-and-motto">
+              <img src="img/footer-logo.png" alt="Brand Logo" title="Brand Logo">
+              <span class="mulish-1">Set your creativity free. UltraViolette</span>
+            </div>
+          </div>
+          <div class="contact1-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Contact</h4>
+              </div>
+              <div class="section-items">
+                <ul>
+                  {% for contact in contacts %}
+                  <li class="mulish-1">{{ contact.name }}: {{ contact.value }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="visit-contact2">
+          <div class="visit-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Overview</h4>
+              </div>
+              <div class="section-items">
+                <ul>
+                  <li class="mulish-1"><a href="{{ url_for('app_portfolio') }}">Portfolio</a></li>
+                  <li class="mulish-1"><a href="{{ url_for('app_about') }}">About</a></li>
+                  <li class="mulish-1"><a href="{{ url_for('app_contact') }}">Contact</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="contact2-section">
+            <div class="section-inside">
+              <div class="section-and-icon">
+                <h4 class="bebas-main">Social Media</h4>
+              </div>
+              <div class="section-items">
+                <ul>
+                  {% for footer_social_media in footer_social_medias %}
+                  <li class="mulish-1"><a href="{{ footer_social_media.link }}" target="_blank">{{ footer_social_media.name }}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    {% endblock %}
+    <!-- Footer end -->
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

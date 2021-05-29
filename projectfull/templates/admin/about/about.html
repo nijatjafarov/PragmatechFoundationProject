@@ -1,0 +1,59 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3 style="margin-bottom: 18px;">About Page</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Content</th>
+      <th scope="col">Image name</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>{{ about.title }}</td>
+        <td>{{ about.content }}</td>
+        <td>{{ about.image }}</td>
+        <td>
+          <a href="/admin/updateaboutpage">Update</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+
+
+<div style="display: flex; margin-bottom: 10px;">
+  <h3>Social Media Accounts</h3>
+  <a style="font-size: 1.5em; margin-left: 10px;" href="/admin/addsocialmedia"><i class="bi bi-plus-square"></i></a>
+</div>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Link</th>
+      <th scope="col">Show on Home Sidebar</th>
+      <th scope="col">Show on Footer</th>
+      <th scope="col">Show on About</th>
+      <th scope="col">Show on Projects</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for social_media in social_medias %}
+      <tr>
+        <td>{{ social_media.name }}</td>
+        <td>{{ social_media.link }}</td>
+        <td>{{ social_media.show_on_home }}</td>
+        <td>{{ social_media.show_on_footer }}</td>
+        <td>{{ social_media.show_on_about}}</td>
+        <td>{{ social_media.show_on_project }}</td>
+        <td>
+          <a href="/admin/updatesocialmedia/{{ social_media.id }}">Update</a>
+          <a href="/admin/deletesocialmedia/{{ social_media.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

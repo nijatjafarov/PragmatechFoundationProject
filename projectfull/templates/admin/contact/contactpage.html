@@ -1,0 +1,78 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<h3 style="margin-bottom: 18px;">User Messages</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">User name</th>
+      <th scope="col">User email</th>
+      <th scope="col">User message</th>
+      <th scope="col">Message date</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for user_message in user_messages %}
+      <tr>
+        <td>{{ user_message.name }}</td>
+        <td>{{ user_message.email }}</td>
+        <td>{{ user_message.message }}</td>
+        <td>{{ user_message.date.strftime("%d/%m/%Y %H:%M") }}</td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+
+
+<div style="display: flex; margin-bottom: 10px;">
+    <h3>Contacts</h3>
+    <a style="font-size: 1.5em; margin-left: 10px;" href="/admin/addcontact"><i class="bi bi-plus-square"></i></a>
+</div>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Value</th>
+      <th scope="col">Show on footer</th>
+      <th scope="col">Show on contact page</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for contact in contacts %}
+      <tr>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.value }}</td>
+        <td>{{ contact.show_on_footer }}</td>
+        <td>{{ contact.show_on_contact }}</td>
+        <td>
+          <a href="/admin/updatecontact/{{ contact.id }}">Update</a>
+          <a href="/admin/deletecontact/{{ contact.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<h3 style="margin-bottom: 18px;">Contact Page</h3>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">First title</th>
+      <th scope="col">Second title</th>
+      <th scope="col">Image name</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td>{{ contact_page.title1 }}</td>
+        <td>{{ contact_page.title2 }}</td>
+        <td>{{ contact_page.image }}</td>
+        <td>
+          <a href="/admin/updatecontactpage">Update</a>
+        </td>
+      </tr>
+  </tbody>
+</table>
+{% endblock %}

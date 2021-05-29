@@ -2,17 +2,41 @@
 {% block content %}
 <h3>Update Employer</h3>
 <form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div class="form-group">
+    <label for="fullname">Update fullname</label>
+    {% if form.fullname.errors %}
+      {{ form.fullname(class="form-control form-control-lg is-invalid", value = employer.fullname, placeholder = "Enter the fullname")}}
+      {% for error in form.fullname.errors %}
+        <div class="invalid-feedback">
+          <span>{{ error }}</span>
+        </div>
+      {% endfor %}
+    {% else %}
+        {{ form.fullname(class="form-control form-contorl-lg", value = employer.fullname, placeholder = "Enter the fullname") }}
+    {% endif %}
+  </div>
     <div class="form-group">
-      <label for="fullname">Update fullname</label>
-      <input type="text" class="form-control" id="fullname" name="fullname" value="{{ employer.fullname }}">
+      <label for="fullname">Update profession</label>
+      {% if form.profession.errors %}
+        {{ form.profession(class="form-control form-control-lg is-invalid", value = employer.profession, placeholder = "Enter the profession")}}
+        {% for error in form.profession.errors %}
+          <div class="invalid-feedback">
+            <span>{{ error }}</span>
+          </div>
+        {% endfor %}
+      {% else %}
+          {{ form.profession(class="form-control form-contorl-lg", value = employer.profession, placeholder = "Enter the profession") }}
+      {% endif %}
     </div>
     <div class="form-group">
-        <label for="profession">Update profession</label>
-        <input type="text" class="form-control" id="profession" name="profession" value="{{ employer.profession }}">
-      </div>
-    <div class="form-group">
-      <label for="image">Choose an image</label>
-      <input type="file" class="form-control" id="image" name="img" value="{{ employer.photo }}">
+      {{ form.img.label() }}
+      {{ form.img(class="form-control-file") }}
+      {% if form.img.errors %}
+          {% for error in form.img.errors %}
+              <span class="text-danger">{{ error }}</span><br>
+          {% endfor %}
+      {% endif %}
     </div>
     <button type="submit" class="btn btn-primary mb-2">Update</button>
 </form>

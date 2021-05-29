@@ -1,0 +1,59 @@
+{% extends "admin/layout.html" %}
+{% block content %}
+<div style="display: flex; margin-bottom: 10px;">
+  <h3>Projects</h3>
+  <a style="font-size: 1.5em; margin-left: 10px;" href="/admin/addproject"><i class="bi bi-plus-square"></i></a>
+</div>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Project name</th>
+      <th scope="col">Cover Image</th>
+      <th scope="col">Category</th>
+      <th scope="col">Upload Date</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project in Project.query.all() %}
+      <tr>
+        <td>{{ project.name }}</td>
+        <td>{{ project.cover_image }}</td>
+        <td>{{ Profession.query.get(project.profession_id).name }}</td>
+        <td>{{ project.date.strftime("%d/%m/%Y %H:%M") }}</td>
+        <td>
+          <a href="/admin/updateproject/{{ project.id }}">Update</a>
+          <a href="/admin/deleteproject/{{ project.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+
+<div style="display: flex; margin-bottom: 10px;">
+  <h3>Project Images</h3>
+  <a style="font-size: 1.5em; margin-left: 10px;" href="/admin/addprojectimage"><i class="bi bi-plus-square"></i></a>
+</div>
+<table style="margin-bottom: 5%;" class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Image name</th>
+      <th scope="col">Project</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for project_image in project_images %}
+      <tr>
+        <td>{{ project_image.image }}</td>
+        <td>{{ Project.query.get(project_image.project_id).name }}</td>
+        <td>
+          <a href="/admin/updateprojectimage/{{ project_image.id }}">Update</a>
+          <a href="/admin/deleteprojectimage/{{ project_image.id }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
